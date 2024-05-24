@@ -1,0 +1,28 @@
+.primary-color {
+    color: #0d89d8;
+}
+
+.primary-color-dark {
+    color: #0c4f79;
+}
+
+.header img {
+    width: 100%;
+}
+
+section {
+    padding: 40px; 
+}
+
+.category h3 {
+    font-size: 1.3rem;
+}
+
+.category a {
+    text-decoration: none;
+    color: #0c4f79;
+}
+
+.category a:hover {
+    color: #0d89d8;
+}

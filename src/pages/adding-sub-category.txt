@@ -1,0 +1,44 @@
+1. Create html file in respective path for new sub-CATEGORY
+
+    Example: src > pages > languages > javascript > sub-cat-name.html
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Copy/Paste page content from existing sub-category file. Update <title>, sidebar-placeholder (if necessary), 
+   breadcrumb placeholder (if necessary), scripts (if necessary)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+3.  Add new drop down DIV in respective subnav.html
+
+    <div class="dropdown">
+    <button class="parent btn dropdown-toggle p-0 ms-4" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false" data-bs-offset="0,8">
+        DROPDOWN TEXT
+    </button>
+    <ul class="subnav-parent dropdown-menu dropdown-menu-end p-0 m-0">
+        <li><a class="dropdown-item" href="/src/pages/PATH/TO/FILE.html">Overview</a></li>
+        <li>
+            <hr class="dropdown-divider p-0 m-0">
+        </li>
+        <li><a class="dropdown-item" href="/src/pages/PATH/TO/link.html">Link</a></li>
+    </ul>
+    </div>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Create sidebar for sub-category in same directory
+
+    Example: Example: src > pages > languages > javascript > sidebar-CATEGORY.html
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Copy/Page page content from existing sub-category sidebar file. Update paths/link text
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Create folder within same directory to store child sections
+
+    Example: src > pages > languages > javascript > CREATE FOLDER FOR SUB CATEGORY
+
+------------------------------------------------------------------------------------------------------------------------------------------

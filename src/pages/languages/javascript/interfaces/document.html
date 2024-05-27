@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Bible | Document | Interfaces | JavaScript</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/pages/languages/language.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Nav Menu -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Nav Menu -->
+        <div id="subnav-placeholder"></div>
+
+        <!-- Content Box -->
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Nav Menu -->
+            <div id="sidebar-placeholder"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs-placeholder"></div>
+                        <li class="breadcrumb-item active" aria-current="page">Document</li>
+                    </ol>
+                </nav>
+
+                <div class="entry-content">
+                    <!-- Content Start -->
+                    <h1 class="primary-color-dark mb-4">Document</h1>
+                    <p class="mb-4">The Document interface in JavaScript represents the entire HTML or XML document that
+                        is loaded into a web browser. It serves as the primary entry point for interacting with the web
+                        page's content and structure through the Document Object Model (DOM). The document object
+                        provides numerous properties and methods for accessing and manipulating elements within the
+                        document. </p>
+
+                    <!-- Syntax -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Syntax</h3>
+                        </div>
+                        <pre class="w-100"><code class="language-javascript m-0">document.methodName(identifier);
+document.methodName(identifier).property = value;
+document.methodName(identifier).property.attribute = value;
+document.methodName.attribute(identifier);
+document.methodName(identifier).attribute(identifier, value);
+document.methodName(identifier).attribute(identifier);</code></pre>
+                        <p class="mt-1">These are the general syntax you can expect using the document interface. You
+                            can see that it is always followed by the methodName but can then vary depending on it's
+                            usage.</p>
+                    </div>
+
+
+                    <!-- Examples -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Examples</h3>
+                        </div>
+                        <pre class="w-100"><code class="language-html m-0">&lt;body&gt;
+    &lt;div id="myDiv"&gt;
+        &lt;p&gt;This is text within the div&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        var newText = document.createElement('p');
+        newText.innerHTML - 'Adding additional text';
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                        <p class="mt-1">Let's start going through examples using this as our starting
+                            HTML/JavaScript body code.</p>
+                        <hr>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv');</code></pre>
+                        <p class="mt-1">When this is executed, the method searches the DOM for an element with the id
+                            attribute equal to 'myDiv'. If such an element is found, the method returns a reference to
+                            that element. If no element with that id exists, it returns null.</p>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').innerHTML ='&lt;p&gt;Changing the HTML within the myDiv element&lt;/p&gt;';</code></pre>
+                        <p class="mt-1">This method accesses the element with id="myDiv" and sets its inner HTML content
+                            to the provided string, effectively updating the content displayed on the web page within
+                            that element.</p>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').style.backgroundColor = '#FFFFFF';</code></pre>
+                        <p class="mt-1">This method accesses the div element with id="myDiv" and sets its background
+                            color to white using inline CSS styles.</p>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').appendChild(newText);</code></pre>
+                        <p class="mt-1">This method accesses the div element with id="myDiv" and appends the newText
+                            element as a child.</p>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').setAttribute('data-info', 'This is a div element');</code></pre>
+                        <p class="mt-1">This method accesses the div element with id="myDiv" and sets a custom attribute
+                            data-info with the value 'This is a div element'.</p>
+                        <pre
+                            class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').getAttribute('data-info');</code></pre>
+                        <p class="mt-1">This method accesses the div element with id="myDiv" and retrieves the value of
+                            the data-info attribute.</p>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Categories</h3>
+                        </div>
+                        <p>The Document interface atrributes and usages can be broken down into 3 categories.</p>
+                        <div class="section-card d-flex flex-column">
+                            <a href='/src/pages/languages/javascript/interfaces/document/instance-properties.html'>
+                                <h4>Instance Properties</h4>
+                            </a>
+                            <p>Instance properties of the Document interface are attributes or variables that hold data
+                                or state about the document. These properties provide information about the document and
+                                allow for interaction with its structure and content.</p>
+                            <pre><code class="language-javascript">console.log(document.title); // Outputs the current document title
+document.title = "New Title"; // Sets the document title to "New Title"
+console.log(document.body); // Outputs the &lt;body&gt; element
+console.log(document.URL); // Outputs the current document URL</code></pre>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <a href='/src/pages/languages/javascript/interfaces/document/instance-methods.html'>
+                                <h4>Instance Methods</h4>
+                            </a>
+                            <p>Instance methods of the Document interface are functions that perform actions on the
+                                document or its elements. These methods allow you to manipulate the document’s
+                                structure, content, and style dynamically.</p>
+                            <pre><code class="language-javascript">var element = document.getElementById('myDiv'); // Get the element with id="myDiv"
+var newDiv = document.createElement('div'); // Create a new div element
+var element = document.querySelector('.myClass'); // Get the first element with class="myClass"</code></pre>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <a href='/src/pages/languages/javascript/interfaces/document/events.html'>
+                                <h4>Events</h4>
+                            </a>
+                            <p>Events are actions or occurrences that happen in the document, such as user interactions, browser actions, or other events like loading or resizing. The Document interface can listen for these events and execute code in response to them.</p>
+                            <pre><code class="language-javascript">// Execute code when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('The DOM is fully loaded.');
+});
+
+// Execute code when the myDiv element is clicked
+document.getElementById('myDiv').addEventListener('click', function() {
+    console.log('myDiv was clicked.');
+}); 
+
+// Execute code when a key is pressed
+document.addEventListener('keydown', function(event) {
+    console.log('A key was pressed: ' + event.key);
+});</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+    <script src="/src/pages/languages/script.js"></script>
+    <script src="/src/pages/languages/javascript/script.js"></script>
+    <script src="/src/pages/languages/javascript/interfaces/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

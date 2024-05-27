@@ -306,6 +306,11 @@ li {
     font-size: 1.1rem;
 }
 
+.section-entry hr {
+    border: 3px dotted;
+    margin: 30px 0;
+}
+
 .section-card {
     margin-top: 15px;
     margin-bottom: 30px;

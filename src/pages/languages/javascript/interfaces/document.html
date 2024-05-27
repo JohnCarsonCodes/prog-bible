@@ -80,34 +80,39 @@ document.methodName(identifier).attribute(identifier);</code></pre>
         newText.innerHTML - 'Adding additional text';
     &lt;/script&gt;
 &lt;/body&gt;</code></pre>
-                        <p class="mt-1">Let's start going through examples using this as our starting
+                        <p >Let's start going through examples using this as our starting
                             HTML/JavaScript body code.</p>
                         <hr>
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv');</code></pre>
-                        <p class="mt-1">When this is executed, the method searches the DOM for an element with the id
+                        <p >When this is executed, the method searches the DOM for an element with the id
                             attribute equal to 'myDiv'. If such an element is found, the method returns a reference to
                             that element. If no element with that id exists, it returns null.</p>
+                        <hr class="primary-color">
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').innerHTML ='&lt;p&gt;Changing the HTML within the myDiv element&lt;/p&gt;';</code></pre>
-                        <p class="mt-1">This method accesses the element with id="myDiv" and sets its inner HTML content
+                        <p >This method accesses the element with id="myDiv" and sets its inner HTML content
                             to the provided string, effectively updating the content displayed on the web page within
                             that element.</p>
+                        <hr class="primary-color">
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').style.backgroundColor = '#FFFFFF';</code></pre>
-                        <p class="mt-1">This method accesses the div element with id="myDiv" and sets its background
+                        <p >This method accesses the div element with id="myDiv" and sets its background
                             color to white using inline CSS styles.</p>
+                        <hr class="primary-color">
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').appendChild(newText);</code></pre>
-                        <p class="mt-1">This method accesses the div element with id="myDiv" and appends the newText
+                        <p >This method accesses the div element with id="myDiv" and appends the newText
                             element as a child.</p>
+                        <hr class="primary-color">
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').setAttribute('data-info', 'This is a div element');</code></pre>
-                        <p class="mt-1">This method accesses the div element with id="myDiv" and sets a custom attribute
+                        <p >This method accesses the div element with id="myDiv" and sets a custom attribute
                             data-info with the value 'This is a div element'.</p>
+                        <hr class="primary-color">
                         <pre
                             class="w-100"><code class="language-javascript m-0 mt-3">document.getElementById('myDiv').getAttribute('data-info');</code></pre>
-                        <p class="mt-1">This method accesses the div element with id="myDiv" and retrieves the value of
+                        <p >This method accesses the div element with id="myDiv" and retrieves the value of
                             the data-info attribute.</p>
                     </div>
 
@@ -118,29 +123,28 @@ document.methodName(identifier).attribute(identifier);</code></pre>
                         </div>
                         <p>The Document interface atrributes and usages can be broken down into 3 categories.</p>
                         <div class="section-card d-flex flex-column">
-                            <a href='/src/pages/languages/javascript/interfaces/document/instance-properties.html'>
-                                <h4>Instance Properties</h4>
-                            </a>
+                            <h4>
+                                <a href='/src/pages/languages/javascript/interfaces/document/instance-properties.html'> Instance Properties</a>
+                            </h4>
                             <p>Instance properties of the Document interface are attributes or variables that hold data
                                 or state about the document. These properties provide information about the document and
                                 allow for interaction with its structure and content.</p>
                         </div>
                         <div class="section-card d-flex flex-column">
-                            <a href='/src/pages/languages/javascript/interfaces/document/instance-methods.html'>
-                                <h4>Instance Methods</h4>
-                            </a>
+                            <h4>
+                                <a href='/src/pages/languages/javascript/interfaces/document/instance-methods.html'>Instance Methods</a>
+                            </h4>
                             <p>Instance methods of the Document interface are functions that perform actions on the
                                 document or its elements. These methods allow you to manipulate the document’s
                                 structure, content, and style dynamically.</p>
-                            <pre><code class="language-javascript">var element = document.getElementById('myDiv'); // Get the element with id="myDiv"
-var newDiv = document.createElement('div'); // Create a new div element
-var element = document.querySelector('.myClass'); // Get the first element with class="myClass"</code></pre>
                         </div>
                         <div class="section-card d-flex flex-column">
-                            <a href='/src/pages/languages/javascript/interfaces/document/events.html'>
-                                <h4>Events</h4>
-                            </a>
-                            <p>Events are actions or occurrences that happen in the document, such as user interactions, browser actions, or other events like loading or resizing. The Document interface can listen for these events and execute code in response to them.</p>
+                            <h4>
+                                <a href='/src/pages/languages/javascript/interfaces/document/events.html'>Events</a>
+                            </h4>
+                            <p>Events are actions or occurrences that happen in the document, such as user interactions,
+                                browser actions, or other events like loading or resizing. The Document interface can
+                                listen for these events and execute code in response to them.</p>
                         </div>
                     </div>
 

@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/src/pages/languages/javascript/interfaces/crumbs.html')
+    fetch('/src/pages/languages/javascript/interfaces/document/crumbs.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('crumbs-placeholder').innerHTML = data;
+            document.getElementById('crumbs-doc-placeholder').innerHTML = data;
         });
 });

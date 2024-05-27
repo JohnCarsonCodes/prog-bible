@@ -124,10 +124,6 @@ document.methodName(identifier).attribute(identifier);</code></pre>
                             <p>Instance properties of the Document interface are attributes or variables that hold data
                                 or state about the document. These properties provide information about the document and
                                 allow for interaction with its structure and content.</p>
-                            <pre><code class="language-javascript">console.log(document.title); // Outputs the current document title
-document.title = "New Title"; // Sets the document title to "New Title"
-console.log(document.body); // Outputs the &lt;body&gt; element
-console.log(document.URL); // Outputs the current document URL</code></pre>
                         </div>
                         <div class="section-card d-flex flex-column">
                             <a href='/src/pages/languages/javascript/interfaces/document/instance-methods.html'>
@@ -145,20 +141,6 @@ var element = document.querySelector('.myClass'); // Get the first element with 
                                 <h4>Events</h4>
                             </a>
                             <p>Events are actions or occurrences that happen in the document, such as user interactions, browser actions, or other events like loading or resizing. The Document interface can listen for these events and execute code in response to them.</p>
-                            <pre><code class="language-javascript">// Execute code when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('The DOM is fully loaded.');
-});
-
-// Execute code when the myDiv element is clicked
-document.getElementById('myDiv').addEventListener('click', function() {
-    console.log('myDiv was clicked.');
-}); 
-
-// Execute code when a key is pressed
-document.addEventListener('keydown', function(event) {
-    console.log('A key was pressed: ' + event.key);
-});</code></pre>
                         </div>
                     </div>
 

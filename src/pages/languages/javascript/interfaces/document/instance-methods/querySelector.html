@@ -48,9 +48,9 @@
 
                     <h5>vs. getElementById()</h5>
                     <p>Compared to <a href="/src/pages/languages/javascript/interfaces/document/instance-methods/getElementById.html">getElementById()</a>, it is slightly slower due to the need to parese the selector string and match it against the DOM. Use querySelector() when Selecting by <strong>Complex Selectors</strong>, <strong>Combining Selectors</strong> or when using <strong>CSS Pseudo-Classes</strong></p>
-                    <pre><code class="language-javascript mb-4">var element = document.querySelector('.myClass[data-info="example"]'); // Complex Selectors
-var element = document.querySelector('div.myClass, p'); // Combining Selectors
-var element = document.querySelector('input[type="text"]'); // CSS Pseudo-Classes</code></pre>
+                    <pre><code class="language-javascript mb-4">document.querySelector('.myClass[data-info="example"]'); // Complex Selectors
+document.querySelector('div.myClass, p'); // Combining Selectors
+document.querySelector('input[type="text"]'); // CSS Pseudo-Classes</code></pre>
 
                     <h5>Flexibility</h5>
                     <ul class="mb-4">
@@ -92,17 +92,21 @@ document.querySelector('div.myClass, p'); // Selecting multiple elements</code><
                         </div>
                         <div class="section-card d-flex flex-column">
                             <h4>Form Validation</h4>
+                            <p>Checks if the value of the email input field is empty and logs "Email is required" to the console if it is.</p>
                             <pre><code class="language-javascript mb-4">var emailInput = document.querySelector('input[type="email"]');
 if (emailInput.value === '') {
     console.log('Email is required');
 }</code></pre>
                             <h4>Dynamic Content Update</h4>
+                            <p>Selects the first &lt;h1&gt; element in the document and sets its text content to "Welcome to My Website".</p>
                             <pre><code class="language-javascript mb-4">var heading = document.querySelector('h1');
 heading.textContent = 'Welcome to My Website';</code></pre>
                             <h4>Styling and Animation</h4>
+                            <p>Selects the first element with the class submit-button and sets its background color to green.</p>
                             <pre><code class="language-javascript mb-4">var button = document.querySelector('.submit-button');
 button.style.backgroundColor = 'green';</code></pre>
                             <h4>Event Handling</h4>
+                            <p>Selects the first &lt;a&gt; element in the document, adds a click event listener to it that prevents the default navigation behavior, and logs "Link clicked, but navigation prevented" to the console when the link is clicked.</p>
                             <pre><code class="language-javascript">var link = document.querySelector('a');
 link.addEventListener('click', function(event) {
     event.preventDefault();
@@ -138,6 +142,20 @@ if (element) {
                             <p class="mb-4">Use browser developer tools to test and refine your selectors before using them in code. This can help ensure they select the intended elements.</p>
                         </div>
                     </div>
+
+                    <!-- Additional Resources -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Additional Resources</h3>
+                        </div>
+                        <div class="section-card d-flex flex-row gap-10">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank"><button class="btn-resource">MDN</button></a>
+                            <a href="https://www.w3schools.com/jsref/met_document_queryselector.asp" target="_blank"><button class="btn-resource">W3 Schools</button></a>
+                            <a href="https://www.geeksforgeeks.org/html-dom-queryselector-method/" target="_blank"><button class="btn-resource">Geeks For Geeks</button></a>
+                            <a href="https://www.javatpoint.com/javascript-queryselector" target="_blank"><button class="btn-resource">Javatpoint</button></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

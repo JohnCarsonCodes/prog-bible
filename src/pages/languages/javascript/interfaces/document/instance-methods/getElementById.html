@@ -48,9 +48,9 @@
 
                     <h5>vs. querySelector()</h5>
                     <p>Compared to <a href="/src/pages/languages/javascript/interfaces/document/instance-methods/querySelector.html">querySelector()</a>, it is faster and more efficient since it directly accesses elements by their unique id. Use getElementById() when needing to <strong>Select by Unique ID</strong>, <strong>Performance-Critial Tasks</strong> or for <strong>Simplicity and Clarity</strong></p>
-                    <pre><code class="language-javascript mb-4">var element = document.getElementById('myDiv'); // Unique ID
-var button = document.getElementById('submitButton'); // Performance-Critical Tasks
-var header = document.getElementById('mainHeader'); // Simplicity and Clarity</code></pre>
+                    <pre><code class="language-javascript mb-4">document.getElementById('myDiv'); // Unique ID
+document.getElementById('submitButton'); // Performance-Critical Tasks
+document.getElementById('mainHeader'); // Simplicity and Clarity</code></pre>
 
                     <h5>Flexibility</h5>
                     <ul class="mb-4">
@@ -94,22 +94,28 @@ button.addEventListener('click', function() {
                         </div>
                         <div class="section-card d-flex flex-column">
                             <h4>Accessing Form Elements</h4>
+                            <p>Selects the &lt;input&gt; element with the id of username and sets its value to 'JohnDoe'.</p>
                             <pre><code class="language-javascript mb-4">// HTML
 &lt;input type="text" id="username" /&gt;
 
+// JavaScript
 var usernameInput = document.getElementById('username');
 usernameInput.value = 'JohnDoe';</code></pre>
                             <h4>Toggling Visibility</h4>
+                            <p>This code selects the element with the id of myDiv, hides it by setting its display style to 'none', and then immediately shows it again by setting its display style to 'block'.</p>
                             <pre><code class="language-javascript mb-4">// HTML
 &lt;div id="myDiv"&gt;Content to hide or show&lt;&sol;div&gt;
 
+// JavaScript
 var element = document.getElementById('myDiv');
 element.style.display = 'none'; // Hides the element
 element.style.display = 'block'; // Shows the element</code></pre>
                             <h4>Updating Attributes</h4>
+                            <p>Selects the &lt;img&gt; element with the id of myImage and changes its src attribute from 'image1.jpg' to 'image2.jpg'.</p>
                             <pre><code class="language-javascript mb-4">// HTML
 &lt;img id="myImage" src="image1.jpg" &sol;&gt;
     
+// JavaScript
 var image = document.getElementById('myImage');
 image.setAttribute('src', 'image2.jpg');</code></pre>
                         </div>
@@ -156,6 +162,20 @@ if (element) {
 &lt;div id="user_profile"&gt;&lt;&sol;div&gt;</code></pre>
                         </div>
                     </div>
+
+                    <!-- Additional Resources -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Additional Resources</h3>
+                        </div>
+                        <div class="section-card d-flex flex-row gap-10">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById" target="_blank"><button class="btn-resource">MDN</button></a>
+                            <a href="https://www.w3schools.com/jsref/met_document_getelementbyid.asp" target="_blank"><button class="btn-resource">W3 Schools</button></a>
+                            <a href="https://www.geeksforgeeks.org/html-dom-getelementbyid-method/" target="_blank"><button class="btn-resource">Geeks For Geeks</button></a>
+                            <a href="https://www.javatpoint.com/document-getElementById()-method" target="_blank"><button class="btn-resource">Javatpoint</button></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

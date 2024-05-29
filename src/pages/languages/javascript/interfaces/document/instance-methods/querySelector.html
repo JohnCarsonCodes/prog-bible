@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.querySelector() | JavaScript | Programming Bible</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Nav Menu -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Nav Menu -->
+        <div id="subnav-placeholder"></div>
+
+        <!-- Content Box -->
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Nav Menu -->
+            <div id="sidebar-placeholder"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs-im-placeholder"></div>
+                        <li class="breadcrumb-item active" aria-current="page">querySelector()</li>
+                    </ol>
+                </nav>
+
+                <div class="entry-content">
+                    <!-- Content Start -->
+                    <h1 class="primary-color-dark mb-4">querySelector()</h1>
+                    <p class="mb-4">The querySelector() method is a powerful and versatile function provided by the
+                        Document interface in JavaScript. It allows you to find the first element within the document
+                        that matches a specified CSS selector or group of selectors. If no matching element is found, it
+                        returns null.</p>
+
+                    <h5>vs. getElementById()</h5>
+                    <p>Compared to <a href="/src/pages/languages/javascript/interfaces/document/instance-methods/getElementById.html">getElementById()</a>, it is slightly slower due to the need to parese the selector string and match it against the DOM. Use querySelector() when Selecting by <strong>Complex Selectors</strong>, <strong>Combining Selectors</strong> or when using <strong>CSS Pseudo-Classes</strong></p>
+                    <pre><code class="language-javascript mb-4">var element = document.querySelector('.myClass[data-info="example"]'); // Complex Selectors
+var element = document.querySelector('div.myClass, p'); // Combining Selectors
+var element = document.querySelector('input[type="text"]'); // CSS Pseudo-Classes</code></pre>
+
+                    <h5>Flexibility</h5>
+                    <ul class="mb-4">
+                        <li class="bullets">Highly flexible, supports complexx CSS selectors</li>
+                        <li class="bullets">Can select elements by ID, class, attribute, tag name and more</li>
+                    </ul>
+
+
+                    <!-- Syntax -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Syntax</h3>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <pre><code class="language-javascript">document.querySelector('selector');</code></pre>
+                            <p class="m-0">A <strong>selector</strong> is a string that includes one or more selectors to match. This string must adhere to valid CSS selector syntax; otherwise, a SyntaxError exception will be thrown.</p>
+                        </div>
+                    </div>
+
+                    <!-- Examples -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Examples</h3>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <pre><code class="language-javascript">document.querySelector('#myDiv'); // Selecting an element by ID
+document.querySelector('.myClass'); // Selecting an element by Class
+document.querySelector('p'); // Selecting an element by tag
+document.querySelector('#myDiv p'); // Selecting a nested element
+document.querySelector('input[type="text"]'); // Selecting an element by attribute
+document.querySelector('div.myClass, p'); // Selecting multiple elements</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Use Cases</h3>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <h4>Form Validation</h4>
+                            <pre><code class="language-javascript mb-4">var emailInput = document.querySelector('input[type="email"]');
+if (emailInput.value === '') {
+    console.log('Email is required');
+}</code></pre>
+                            <h4>Dynamic Content Update</h4>
+                            <pre><code class="language-javascript mb-4">var heading = document.querySelector('h1');
+heading.textContent = 'Welcome to My Website';</code></pre>
+                            <h4>Styling and Animation</h4>
+                            <pre><code class="language-javascript mb-4">var button = document.querySelector('.submit-button');
+button.style.backgroundColor = 'green';</code></pre>
+                            <h4>Event Handling</h4>
+                            <pre><code class="language-javascript">var link = document.querySelector('a');
+link.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log('Link clicked, but navigation prevented');
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Tips</h3>
+                        </div>
+                        <div class="section-card d-flex flex-column">
+                            <h4>Use Specific Selectors</h4>
+                            <p>Be as specific as possible with your selectors to avoid selecting unintended elements.</p>
+                            <pre><code class="language-javascript mb-4">var specificElement = document.querySelector('#myDiv .myClass');</code></pre>
+                            <h4>Check For NULL</h4>
+                            <p>Always check if querySelector() returns null before trying to manipulate the element.</p>
+                            <pre><code class="language-javascript mb-4">var element = document.querySelector('#nonExistent');
+if (element) {
+    element.textContent = 'This will not run if element is null';
+}</code></pre>
+                            <h4>Performance Considerations</h4>
+                            <p class="mb-4">While querySelector() is powerful, using very complex or broad selectors may impact performance, especially in large documents. For high-performance requirements, consider using more specific methods like getElementById().</p>
+                            <h4>Combining Selectors</h4>
+                            <p>Combine multiple selectors to target elements more precisely.</p>
+                            <pre><code class="language-javascript mb-4">var specialButton = document.querySelector('button.special');</code></pre> 
+                            <h4>Using Pseudo-Classes:</h4>
+                            <p>Leverage CSS pseudo-classes to select elements in dynamic states.</p>
+                            <pre><code class="language-javascript mb-4">var firstLink = document.querySelector('a:first-of-type');</code></pre> 
+                            <h4>Debugging</h4>
+                            <p class="mb-4">Use browser developer tools to test and refine your selectors before using them in code. This can help ensure they select the intended elements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+    <script src="/src/pages/languages/script.js"></script>
+    <script src="/src/pages/languages/javascript/script.js"></script>
+    <script src="/src/pages/languages/javascript/interfaces/script.js"></script>
+    <script src="/src/pages/languages/javascript/interfaces/document/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

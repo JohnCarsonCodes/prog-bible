@@ -313,7 +313,7 @@ li {
 
 .section-card {
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .section-card a {
@@ -325,3 +325,10 @@ li {
     color: #0d89d8;
 }
 
+.entry-content a {
+    text-decoration: none;
+}
+
+li.bullets {
+    list-style: disc;
+}

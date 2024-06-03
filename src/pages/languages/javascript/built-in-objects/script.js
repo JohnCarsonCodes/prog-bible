@@ -1,6 +1,6 @@
 // FOR ARRAY SIDEBAR
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/src/pages/languages/javascript/built-in-objects/array-sidebar.html')
+    fetch('/src/pages/languages/javascript/built-in-objects/arrays/array-sidebar.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('sidebar-placeholder').innerHTML = data;

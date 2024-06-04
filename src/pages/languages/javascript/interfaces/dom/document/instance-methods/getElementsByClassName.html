@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document.getElementsByClassName() | JavaScript | Programming Bible</title>
+    <title>Document.getElementsByClassName() | DOM | Interfaces ofJavaScript | Programming Bible</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
                 <!-- Breadcrumb -->
                 <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb open-sans">
-                        <div class="breadcrumb-item crumbs" id="crumbs-im-placeholder"></div>
+                        <div class="breadcrumb-item crumbs" id="crumbs-placeholder"></div>
                         <li class="breadcrumb-item active" aria-current="page">getElementsByClassName()</li>
                     </ol>
                 </nav>
@@ -47,7 +47,7 @@
                     <p class="mb-4">The getElementsByClassName() method is provided by the Document interface in JavaScript. It returns a live HTMLCollection of all elements in the document that have all the specified class names. This method is useful for selecting multiple elements that share a common class name.</p>
 
                     <h5>vs. querySelectyAll()</h5>
-                    <p>Compared to <a href="/src/pages/languages/javascript/interfaces/document/instance-methods/querySelectorAll.html">querySelectorAll()</a>, it is slightly faster to select elements by class name due to its simplicity. Use getElementsByClassName() when you prefer a live collection that updates automatically with changes to the DOM.</p>
+                    <p>Compared to <a href="/src/pages/languages/javascript/interfaces/dom/document/instance-methods/querySelectorAll.html">querySelectorAll()</a>, it is slightly faster to select elements by class name due to its simplicity. Use getElementsByClassName() when you prefer a live collection that updates automatically with changes to the DOM.</p>
 
                     <h5 class="mb-4">Flexibility</h5>
                     <ul>
@@ -153,13 +153,13 @@ elementsArray.forEach(function(element) {
         </div>
 
         <!-- Scripts -->
+        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/src/script.js"></script>
         <script src="/src/pages/languages/script.js"></script>
-        <script src="/src/pages/languages/javascript/script.js"></script>
-        <script src="/src/pages/languages/javascript/interfaces/script.js"></script>
-        <script src="/src/pages/languages/javascript/interfaces/document/script.js"></script>
+        <script src="/src/pages/languages/javascript/interfaces/dom/document/script.js"></script>
+        <script src="/src/pages/languages/javascript/interfaces/dom/document/instance-methods/script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
 </body>

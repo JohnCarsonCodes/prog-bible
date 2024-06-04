@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes | OOP | Fundamentals of JavaScript | Programming Bible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Nav Menu -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Nav Menu -->
+        <div id="subnav-placeholder"></div>
+
+        <!-- Content Box -->
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Nav Menu -->
+            <div id="sidebar-placeholder"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs-placeholder"></div>
+                        <li class="breadcrumb-item active" aria-current="page">Classes</li>
+                    </ol>
+                </nav>
+
+                <!-- Content Start -->
+                <div class="entry-content" id="top">
+                    <!-- Intro -->
+                    <h1 class="primary-color-dark mb-4">Classes</h1>
+                    <p class="mb-4">Let's say you are organizing your video game library and need to store information for each of the games you own. You can create a new object with individual properties, but if they all share the same ones, it makes sense to create a more efficient way to create and store them. This is where <strong>CLASSES</strong> come in. 
+                        <br><br>
+                        Classes are a blueprint for creating objects with predefined properties and methods. Introduced in <a href="https://262.ecma-international.org/6.0/" target="_blank">ECMAScript 6 (ES6)</a>, classes provide a more structured and cleaner syntax to define
+                        constructor functions and prototype inheritance, which were previously achieved using functions
+                        and prototypes. Picture them as a template to easily plop in the information you want to store for each objects properties, and methods as an efficient way to access, manipulate or create attributes.</p>
+
+                    <!-- Key Concepts -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4">Key Concepts</h3>
+                            <div class="inner-section" id="declaration">
+                                <h4>Class Declaration</h4>
+                                <p>A class is declared using the class keyword followed by the class name. The body of
+                                    the
+                                    class is defined within curly braces {}.</p>
+                                <pre><code class="language-javascript mb-2">class MyClass {
+    // Class body
+}</code></pre>
+                                <h5>Example</h5>
+                                <pre><code class="language-javascript">class VideoGame {
+}</code></pre>
+                            </div>
+                        </div>
+                        <!-- End of Class Declaration-->
+                        <div class="inner-section" id="create-instance">
+                            <h4>Creating An Instance</h4>
+                            <p>To create an instance of a class, use the new keyword followed by the class name and any
+                                required parameters for the constructor.</p>
+                            <pre><code class="language-javascript mb-2">const myInstance = new MyClass();</code></pre>
+                            <h5>Example</h5>
+                            <pre><code class="language-javascript">const newGame = new VideoGame();</code></pre>
+                        </div>
+                        <!-- End of Creating an Instance -->
+
+
+                        <div class="inner-section" id="constructor-method">
+                            <h4>Constructor Method</h4>
+                            <p>The <strong>constructor method</strong> is a special method for creating and initializing an object
+                                created with a class. It is called automatically when a new instance of the class is
+                                created.</p>
+                            <pre><code class="language-javascript mb-2">class MyClass {
+    constructor(param1, param2) {
+        this.property1 = param1;
+        this.property2 = param2;
+    }
+}</code></pre>
+                            <h5>Example</h5>
+                            <pre><code class="language-javascript mb-3">class VideoGame {
+    constructor(name, developer, year) {
+        this.name = name;
+        this.developer = developer;
+        this.year = year
+    }
+}
+
+const redDeadRedemption2 = new VideoGame('Red Dead Redemption 2', 'Rockstar Games', '2018')</code></pre>
+                            <p id="get-set">When it comes to <a
+                                    href="/src/pages/languages/javascript/fundamentals/object-oriented-programming/encapsulation.html">Encapsulation</a>,
+                                <strong>Getters/Setters</strong> can be used to control access to an object's
+                                properties, providing a way to encapsulate the internal representation of the data and
+                                manage how it is accessed or modified. They provide encapsulation, data validation,
+                                computed properties, read-only/write-only properties, and abstraction, thereby enhancing
+                                the robustness and maintainability of your code.
+                            </p>
+                            <pre><code class="language-javascript mb-3">class VideoGame {
+    constructor(name, developer, year) {
+        this._name = name;
+        this._developer = developer;
+        this._year = year
+    }
+
+    get name() { return this._name; }
+    get developer() { return this._developer; } 
+    get year() { return this._year; }
+    
+    set name(newName) { this._name = newName;}
+    set developer(newDeveloper) { this._developer = newDeveloper; }
+    set year(newYear) { this._year = newYear; }
+
+}
+
+const redDeadRedemption2 = new VideoGame('Red Dead Redemption 2', 'Rockstar Games', '2018');
+
+redDeadRedemption2._name; // Returns this._name
+redDeadRedemption2.name; // Calls the get name() property which returns _name
+
+redDeadRedemption2._year = '2020'; // Updates this._year
+redDeadRedemption2.year = '2020'; // Calls the set year() property which updates _year</code></pre>
+
+                            <p id="private-fields">In this instance, the getters/setters aren't assisting with privacy and work the same as
+                                a direct variable call. One HUGE benefit of getters/setters is when restricting and
+                                enforcing <strong>PRIVATE FIELDS</strong>. Introduced in <a
+                                    href="https://262.ecma-international.org/13.0/" target="_blank">ECMAScript 2022</a>,
+                                you can explicitly mark an attribute as private using the newer '<strong>#</strong>'
+                                syntax.
+                                <br><br>
+                                The underscore prefix ('<strong>_</strong>' in JavaScript) utilized in the above code is
+                                a convention used to indicate that the property is intended to be private, even they
+                                aren't aren't inherently private. It is used to show that the properties should be
+                                accessed through getters/setters
+                            </p>
+                            <pre><code class="language-javascript mb-3">class VideoGame {
+
+    #name;
+    #developer;
+    #year;
+
+    constructor(name, developer, year) {
+        this.#name = name;
+        this.#developer = developer;
+        this.#year = year
+    }
+
+    get name() { return this.#name; }
+    get developer() { return this.#developer; } 
+    get year() { return this.#year; }
+    
+    set name(newName) { this.#name = newName;}
+    set developer(newDeveloper) { this.#developer = newDeveloper; }
+    set year(newYear) { this.#year = newYear; }
+
+}
+
+const redDeadRedemption2 = new VideoGame('Red Dead Redemption 2', 'Rockstar Games', '2018');
+
+redDeadRedemption2.#name; // Will provide a SyntaxError as it cannot be directly accessed
+redDeadRedemption2.name; // Calls the get name() method which returns #name
+
+redDeadRedemption2.#year = '2020'; // Will cause an error as it cannot be directly updated
+redDeadRedemption2.year = '2020'; // Calls the set year() property which updates #year</code></pre>
+                            <p id="computed-properties">Getters can also be used to create <strong>Computed Properties</strong> that derivce
+                                their value from other properties. It gives you the ability to define properties that
+                                can dynamically calculate their values based on other data within the object.</p>
+                            <pre><code class="language-javascript">class Ammo {
+    constructor(bullets, mags) {
+        this.bullets = bullets;
+        this.mags = mags;
+    }
+
+    get count() {
+        return this.bullets * this.mags;
+    }
+}
+
+const rayGunAmmo = new Ammo(12,6);
+console.log(rayGunAmmo.count); // This would return the count property, which in this case is 72 (12*6)</code></pre>
+                        </div>
+                        <!-- End of Constructor Method -->
+
+                        <div class="inner-section" id="methods">
+                            <h4>Methods</h4>
+                            <p>Methods are functions defined inside the class body. They define the behavior of the
+                                objects created from the class.</p>
+                            <pre><code class="language-javascript mb-2">class MyClass {
+    constructor(param1, param2) {
+        this.property1 = param1;
+        this.property2 = param2;
+    }
+
+    method1() {
+        console.log(this.property1);
+    }
+
+    method2() {
+        console.log(this.property2);
+    }
+}</code></pre>
+                            <h5>Example</h5>
+                            <pre><code class="language-javascript">class VideoGame {
+    constructor(name, developer, year) {
+        this.name = name;
+        this.developer = developer;
+        this.year = year
+    }
+
+    strOutput() {
+        return `${this.name} was developed by ${this.developer} and released in ${this.year}.`;
+    }
+}
+
+const redDeadRedemption2 = new VideoGame('Red Dead Redemption 2', 'Rockstar Games', '2018');
+
+console.log(redDeadRedemption2.strOutput()); // Output: Red Dead Redemption 2 was developed by Rockstar Games and released in 2018.</code></pre>
+                        </div>
+                        <!-- End of Methods -->
+
+                        <div class="inner-section" id="static-methods">
+                            <h4>Static Methods</h4>
+                            <p>Static methods are methods defined on the class itself, rather than on instances of the
+                                class. They are called on the class and not on the objects created from the class.
+                                Static methods are often used to create utility functions that are related to the class
+                                but do not operate on instances of the class.</p>
+                            <pre><code class="language-javascript mb-2">class HitDMG {
+    static headDMG(hits, multiplier) {
+        return hits * multiplier;
+    }
+
+    static limbDMG(hits, multiplier) {
+        return hits * multiplier;
+    }
+}
+
+HitDMG.headDMG(3, 1.4) // Output: 4.2 (3 hits * 1.4 multiplier)
+HitDMG.limbDMG(3, 0.8) // Output: 2.4 (3 hits * 0.8 multiplier)</code></pre>
+                            <p>With the static method, a new instance of HitDMG didn't need to be created to utilize, as it was called directly on the class and not an <strong>INSTANCE</strong> of the class. Due to this, a static method would not be able to access data of an object, and can only access other static methods or properties. These are useful for utility and operations that aren't tied to a specific object or instance.</p>
+                        </div>
+                        <!-- End of Static Methods -->
+                    </div>
+                </div>
+
+                <!-- Internal Navigation -->
+                <div class="internal-nav">
+                    <h6>Jump To Section</h6>
+                    <hr class="internal-hr">
+                    <div class="internal-links">
+                        <ul>
+                            <li><a href="#top">Overview</a></li>
+                            <li><a href="#declaration">Class Declaration</a></li>
+                            <li><a href="#create-instance">Creating An Instance</a></li>
+                            <li><a href="#constructor-method">Constructor Method</a></li>
+                                <ul class="inner-ul">
+                                    <li class="inner-li"><a href="#get-set">Getters/Setters</a></li>
+                                    <li class="inner-li"><a href="#private-fields">Private Fields</a></li>
+                                    <li class="inner-li"><a href="#computed-properties">Computed Properties</a></li>
+                                </ul>
+                            <li><a href="#methods">Methods</a></li>
+                            <li><a href="#static-methods">Static Methods</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+    <script src="/src/pages/languages/script.js"></script>
+    <script src="/src/pages/languages/javascript/script.js"></script>
+    <script src="/src/pages/languages/javascript/fundamentals/script.js"></script>
+    <script src="/src/pages/languages/javascript/fundamentals/object-oriented-programming/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

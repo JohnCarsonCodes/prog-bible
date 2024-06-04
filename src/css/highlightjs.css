@@ -10,6 +10,7 @@ pre code.hljs {
   padding: 0.8rem 1rem;
   margin: 0;
   height: auto;
+  max-height: 500px;
 }
 .hljs {
   background: #1e1e1e;

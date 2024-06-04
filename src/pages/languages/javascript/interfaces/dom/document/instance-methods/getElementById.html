@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document.getElementById() | JavaScript | Programming Bible</title>
+    <title>Document.getElementById() | DOM | Interfaces ofJavaScript | Programming Bible</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
                 <!-- Breadcrumb -->
                 <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb open-sans">
-                        <div class="breadcrumb-item crumbs" id="crumbs-im-placeholder"></div>
+                        <div class="breadcrumb-item crumbs" id="crumbs-placeholder"></div>
                         <li class="breadcrumb-item active" aria-current="page">getElementById()</li>
                     </ol>
                 </nav>
@@ -47,7 +47,7 @@
                         for DOM manipulation.</p>
 
                     <h5>vs. querySelector()</h5>
-                    <p>Compared to <a href="/src/pages/languages/javascript/interfaces/document/instance-methods/querySelector.html">querySelector()</a>, it is faster and more efficient since it directly accesses elements by their unique id. Use getElementById() when needing to <strong>Select by Unique ID</strong>, <strong>Performance-Critial Tasks</strong> or for <strong>Simplicity and Clarity</strong></p>
+                    <p>Compared to <a href="/src/pages/languages/javascript/interfaces/dom/document/instance-methods/querySelector.html">querySelector()</a>, it is faster and more efficient since it directly accesses elements by their unique id. Use getElementById() when needing to <strong>Select by Unique ID</strong>, <strong>Performance-Critial Tasks</strong> or for <strong>Simplicity and Clarity</strong></p>
                     <pre><code class="language-javascript mb-4">document.getElementById('myDiv'); // Unique ID
 document.getElementById('submitButton'); // Performance-Critical Tasks
 document.getElementById('mainHeader'); // Simplicity and Clarity</code></pre>
@@ -186,9 +186,8 @@ if (element) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/script.js"></script>
     <script src="/src/pages/languages/script.js"></script>
-    <script src="/src/pages/languages/javascript/script.js"></script>
-    <script src="/src/pages/languages/javascript/interfaces/script.js"></script>
-    <script src="/src/pages/languages/javascript/interfaces/document/script.js"></script>
+    <script src="/src/pages/languages/javascript/interfaces/dom/document/script.js"></script>
+    <script src="/src/pages/languages/javascript/interfaces/dom/document/instance-methods/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </body>

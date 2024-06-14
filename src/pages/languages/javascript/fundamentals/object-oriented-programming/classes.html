@@ -20,18 +20,18 @@
         <!-- Nav Menu -->
         <div id="nav-placeholder"></div>
         <!-- Sub Nav Menu -->
-        <div id="subnav-placeholder"></div>
+        <div id="subnav"></div>
 
         <!-- Content Box -->
         <div class="content d-flex flex-row p-0">
             <!-- Side Nav Menu -->
-            <div id="sidebar-placeholder"></div>
+            <div id="sidebar"></div>
             <!-- Main Content -->
             <div class="main-content d-flex flex-column m-0">
                 <!-- Breadcrumb -->
                 <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb open-sans">
-                        <div class="breadcrumb-item crumbs" id="crumbs-placeholder"></div>
+                        <div class="breadcrumb-item crumbs" id="crumbs"></div>
                         <li class="breadcrumb-item active" aria-current="page">Classes</li>
                     </ol>
                 </nav>
@@ -278,10 +278,17 @@ HitDMG.limbDMG(3, 0.8) // Output: 2.4 (3 hits * 0.8 multiplier)</code></pre>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/script.js"></script>
-    <script src="/src/pages/languages/script.js"></script>
-    <script src="/src/pages/languages/javascript/script.js"></script>
-    <script src="/src/pages/languages/javascript/fundamentals/script.js"></script>
-    <script src="/src/pages/languages/javascript/fundamentals/object-oriented-programming/script.js"></script>
+
+    <script script type='module'>
+        import { navInsert } from '/src/utilities.js';
+        // Sub Nav
+        navInsert('/src/pages/languages/js-subnav.html', 'subnav');
+        // Sidebar
+        navInsert('/src/pages/languages/javascript/fundamentals/object-oriented-programming/sidebar.html', 'sidebar');
+        //Crumbs
+        navInsert('/src/pages/languages/javascript/crumbs.html', 'crumbs');
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </body>

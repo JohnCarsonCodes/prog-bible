@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modules |Advanced Topics | JavaScript | Programming Bible</title>
+  <title>Modules | Advanced Topics | JavaScript | Programming Bible</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,7 +12,7 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/pages/languages/language.css">
+  <link rel="stylesheet" href="/src/css/highlightjs.css">
 </head>
 
 <body>
@@ -37,8 +37,316 @@
 
         <!-- Content Start -->
         <div class="entry-content">
-          <h1 class="primary-color-dark mb-4">Modules</h1>
-          <p class="mb-4"></p>
+          <h1 class="primary-color-dark mb-4 anchor" id="top">Modules</h1>
+          <p class="mb-4">JavaScript modules are like little self-contained packages of code that help keep everything
+            organized and neat. They let you bundle up related bits of functionality—like variables, functions, and
+            classes—so they're not cluttering up the global space. Think of it like putting your tools in a toolbox
+            instead of leaving them all over the garage.<br><br>
+
+            The magic of modules comes from <strong>exporting</strong> and <strong>importing</strong>. When you export
+            something from a module, you're basically saying, "Hey, this bit of code is available for others to use."
+            You can export specific items by name (named exports) or you can set a default export if there's one main
+            thing you want to share.<br><br>
+
+            Then, in another part of your code, you can import just the pieces you need. This keeps everything tidy and
+            makes it easy to reuse code without repeating yourself. It's like borrowing a tool from a friend's toolbox
+            instead of buying your own. This system makes your code more modular, easier to manage, and keeps your
+            projects scalable and maintainable.</p>
+
+          <!-- Syntax -->
+          <div class="section-entry">
+            <div class="section-title">
+              <h3 class="primary-color-dark anchor" id="why-use">Why Use Modules?</h3>
+              <p>Using modules in JavaScript is a smart way to organize and manage your code. Modules help keep your
+                code clean and structured by breaking it down into smaller, more manageable pieces. This modular
+                approach not only makes your code easier to understand and maintain but also enhances collaboration
+                among developers by clearly defining each module's responsibilities. <br><br>
+                By dividing your code into distinct modules, you can improve encapsulation, promoting better data
+                privacy
+                and security. Moreover,
+                it boosts the reusability of your code, allowing you to effortlessly share and reuse functions across
+                different parts of your application or even across different projects. Each module operates within its
+                own scope, reducing the risk of conflicts and making it easier to troubleshoot and debug. Overall, using
+                modules leads to a more scalable, maintainable, and efficient codebase.<br><br>
+                Key features are as follow:
+                <li><strong>Ecapsulation:</strong> Modules encapsulate code, allowing private variables and functions.
+                </li>
+                <li><strong>Reusability:</strong> Promotes reusability of code across different parts of an application
+                  or
+                  across different projects.</li>
+                <li><strong>Maintainability:</strong> Easier to manage and maintain code when it's divided into smaller,
+                  logical pieces.</li>
+                <li><strong>Scope:</strong> Each module has its own scope, preventing variable and function conflicts.
+                </li>
+              </p>
+            </div>
+
+            <div class="section-title">
+              <h3 class="primary-color-dark anchor" id="setup">Setup Modules For Use</h4>
+                <p>In order to use modules, we need to add a <strong>type='module'</strong> attribute to our script tag.
+                  This attribute tells the browser to treat the script as a module, which means you can use the import
+                  and
+                  export statements to organize your code into separate, reusable pieces. Module scripts are deferred,
+                  meaning they will only execute after the document has been parsed. Let's set up the foundation of our
+                  file structure to make things a little easier.</p>
+                <pre><code class="language-txt mb-2">/src
+  |-- index.html
+  |-- style.css
+  |-- script.js</code></pre>
+                <p>Like with any scripting, we need to link the .js file to our project. This can be linked using the
+                  <strong>&lt;script&gt;</strong> tag within either the <em>&lt;head&gt;</em> or <em>&lt;body&gt;</em>.
+                  For our instance, let's put it in the head.
+                </p>
+                <pre><code class="language-html mb-2">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Video Game Tournament&lt;&sol;title&gt;
+    &lt;script type="module" src=".&sol;script.js"&gt;&lt;&sol;script&gt;
+  &lt;&sol;head&gt;
+  &lt;body&gt;
+    &lt;div id="content-container"&gt;&lt;&sol;div&gt;
+  &lt;&sol;body&gt;
+&lt;&sol;html&gt;</code></pre>
+            </div>
+
+            <div class="section-title">
+              <h3 class="primary-color-dark anchor" id="how-it-works">How It Works</h3>
+              <div class="section-card d-flex flex-column">
+                <p class="mb-3">Let's say we're running a gaming tournament and need a way to calculate user scores to
+                  find out who has the highest score average over so many games, and also log their overall game time
+                  just
+                  for fun. As a master of JavaScript, you write out
+                  the following functions.</p>
+                <pre><code class="language-javascript mb-2">function calculateAverageScore(scores) {
+  const total = scores.reduce((sum, score) => sum + score, 0);
+  return total / scores.length;
+}
+
+function calculateTotalPlaytime(sessions) {
+  return sessions.reduce((total, session) => total + session.duration, 0);
+}</code></pre>
+                <p class="mb-5">You now have your means of calculating the scores and play time, but you need a way to
+                  utilize this
+                  multiple times in other parts of your code. The first thing we need to do is <strong>export</strong>
+                  this function from our module.</p>
+
+
+                <h4 class="mb-3 anchor" id="export">Export</h4>
+                <p class="mb-4">When it comes to exporting we have a couple of options in doing so. These can be summed
+                  up
+                  to Named Export, Default Export or Exporting With Alias. Let's break these down so it makes sense and
+                  then we'll go into how you'd import a little further down for each case.</p>
+                <h5 id="named-export" class="primary-color anchor">Named Export</h5>
+                <p>Named exporting is super common and really useful. It's like picking specific items you want to share
+                  from your code. You can export as many things as you want from one module, and when you import them,
+                  you
+                  use their exact names. Imagine it like this: you're showing off your awesome collection of game
+                  controllers to a friend, and you tell them the name of each one so they know exactly which one you're
+                  talking about. The syntax looks like this:</p>
+                <pre><code class="language-javascript mb-4">export function calculateAverageScore(scores) {
+  const total = scores.reduce((sum, score) => sum + score, 0);
+  return total / scores.length;
+}
+
+export function calculateTotalPlaytime(sessions) {
+  return sessions.reduce((total, session) => total + session.duration, 0);
+}</code></pre>
+                <h5 id="default-export" class="primary-color anchor">Default Export</h5>
+                <p>Default exporting is like choosing one main thing from your code to share. Each module can have just
+                  one default export. When you import it, you can name it whatever you like, which is super flexible.
+                  It's
+                  like having a favorite game that you always recommend to friends, and they know they can call it
+                  whatever they want. Here’s how you do it:</p>
+                <pre><code class="language-javascript mb-4">export default function calculateAverageScore(scores) {
+  const total = scores.reduce((sum, score) => sum + score, 0);
+  return total / scores.length;
+}</code></pre>
+                <h5 id="alias-export" class="primary-color anchor">Export As Alias</h5>
+                <p>Exporting with an alias is like giving a nickname to something you're exporting. It's handy if you
+                  want
+                  to avoid naming conflicts or just want a clearer name. Imagine you have a game character with a really
+                  long name, and you give it a shorter nickname for convenience. You export it with the alias, and when
+                  you import it, you use that nickname. Here’s the syntax:</p>
+                <pre><code class="language-javascript mb-5">function calculateAverageScore(scores) {
+  const total = scores.reduce((sum, score) => sum + score, 0);
+  return total / scores.length;
+}
+
+export { calculateAverageScore as avgScore }</code></pre>
+                <h4 class="mb-3 anchor" id="import">Import</h4>
+                <p>Now that we've been able to export our functions, now we need to import them to be able to use. With
+                  going over the different exporting options, we can now go over how to import each of them them. First
+                  things first, you'll want to ensure you have the correct path to you .js file for import.</p>
+                <h5 id="named-import" class="primary-color anchor">Named Import</h5>
+                <p>For each Named Export, we would need to import it using the same name. This can either be a single
+                  function, or you can import multiple separated by a comma ", ".</p>
+                <pre><code class="language-javascript mb-4">import { calculateAverageScore, calculateTotalPlaytime } from './script.js';
+import { avgScore } from './script.js' // Using the alias create prior</code></pre>
+                <h5 id="named-import" class="primary-color anchor">Default Import</h5>
+                <p>When you have a default export, you can import it and give it any name you want. It’s like your
+                  friend’s favorite game that they highly recommend—you know it’s their favorite, but you can call it
+                  whatever you like.</p>
+                <pre><code class="language-javascript mb-4">import thatScoreFunction from './script.js';</code></pre>
+                <h5 id="alias-import" class="primary-color anchor">Import With Alias</h5>
+                <p>This lets you rename something while you're importing it. It's super useful if you have a function or
+                  variable with a name that's too long or conflicts with another name in your code. It's just like
+                  exporting with an alias, except it's done when importing.</p>
+                <pre><code class="language-javascript mb-4">import { calculateAverageScore as avgScore } from './script.js';</code></pre>
+              </div>
+              <!-- Tips and Tricks -->
+            </div>
+          </div>
+          <div class="section-entry">
+            <div class="section-title">
+              <h3 class="primary-color-dark anchor" id="tips">Tips</h3>
+              <p class="mb-4">Some quick and easy tips when working with modules.</p>
+              <div class="section-card d-flex flex-column">
+                <h4>File Structure</h4>
+                <p>Organize your project with a clear directory structure to manage modules effectively.</p>
+                <pre><code class="language-txt mb-4">/src
+  /components
+    Button.js
+    Header.js
+  /utils
+    math.js
+  app.js</code></pre>
+                <h4>Use Descriptive Names</h4>
+                <p class="mb-4">When exporting functions, variables, or classes, use descriptive names to make it clear
+                  what they do.
+                  This makes your code easier to understand and maintain.</p>
+                <h4>Default Export for Main Functionality</h4>
+                <p class="mb-4">If your module has one primary function or class, use a default export. This makes it
+                  straightforward
+                  to import and use.</p>
+                <h4>Group Related Functions</h4>
+                <p>Group related functions and variables into a single module to keep your code organized
+                  and modular.
+                </p>
+                <pre><code class="language-javascript mb-4">// damageUtils.js 
+export function calculateHeadDMG(hits, multiplier) {
+  return hits * multiplier;
+}
+
+export function calculateBodyDMG(hits, multiplier) {
+  return hits * multiplier;
+}
+
+export function calculateLimbDMG(hits, multiplier) {
+  return hits * multiplier;
+}</code></pre>
+                <h4>Use Index Files for Barrel Exports</h4>
+                <p>Create an index.js file in a directory to re-export multiple modules. This simplifies importing from
+                  that directory.
+                </p>
+                <pre><code class="language-javascript mb-4">// utils/index.js
+export { calculateAverageScore } from './calculateAverageScore.js';
+export { calculateHeadDMG } from './damageUtils.js';
+
+// app.js
+import { calculateAverageScore, calculateHeadDMG } from './utils';</code></pre>
+                <h4>Avoid Circular Dependencies</h4>
+                <p>Be mindful of circular dependencies where two modules depend on each other. This can cause issues in
+                  your application. If you encounter circular dependencies, refactor your code to eliminate them.
+                </p>
+                <pre><code class="language-javascript mb-4">// title.js
+import { gameFunction } from './game.js';
+export function titleFunction() {
+    gameFunction();
+}
+
+// game.js
+import { titleFunction } from './title.js';
+export function gameFunction() {
+    titleFunction();
+}</code></pre>
+                <h4>Lazy Loading with Dynamic Imports</h4>
+                <p>Use dynamic <strong>import</strong> to load modules only when they are needed. This can improve the
+                  performance of your application by reducing the initial load time.
+                </p>
+                <pre><code class="language-javascript mb-4">// app.js
+document.getElementById('loadButton').addEventListener('click', async () => {
+    const { calculateAverageScore } = await import('./calculateAverageScore.js');
+    const scores = [85, 90, 78, 92, 88];
+    console.log(calculateAverageScore(scores));
+});</code></pre>
+                <h4>Consistent Export Style</h4>
+                <p class="mb-4">Choose either named or default exports for a module and stick with it to maintain
+                  consistency across your codebase.
+                </p>
+                <h4>Use Aliases to Avoid Conflicts</h4>
+                <p>If you import modules with the same name from different files, use aliases to avoid naming conflicts.
+                </p>
+                <pre><code class="language-javascript mb-4">// app.js
+import { calculateAverageScore as avgScoreA } from './utilsA.js';
+import { calculateAverageScore as avgScoreB } from './utilsB.js';
+
+console.log(avgScoreA([85, 90, 78]));
+console.log(avgScoreB([92, 88, 77]));</code></pre>
+                <h4>Document Your Modules</h4>
+                <p>Include comments and documentation within your modules to explain the functionality. This helps other
+                  developers (and future you) understand your code better.
+                </p>
+                <pre><code class="language-javascript mb-4">/**
+ * Calculates the average score from an array of scores.
+ * @param {number[]} scores - An array of scores.
+ * @returns {number} The average score.
+*/
+export function calculateAverageScore(scores) {
+    const total = scores.reduce((sum, score) => sum + score, 0);
+    return total / scores.length;
+}</code></pre>
+                <h4>Use Import Maps for Cleaner Imports</h4>
+                <p>Use import maps in your HTML to simplify and clean up your import statements, especially when dealing with many modules or external libraries.
+                </p>
+                <pre><code class="language-html mb-4">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;title&gt;Import Maps Example&lt;&sol;title&gt;
+      &lt;script type="importmap">
+          {
+              "imports": {
+                  "utils": "./utils.js"
+              }
+          }
+      &lt;/script&gt;
+  &lt;&sol;head&gt;
+  &lt;body&gt;
+      &lt;script type="module" src="./main.js">&lt;&sol;script&gt;
+  &lt;&sol;body&gt;
+&lt;&sol;html&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div> <!-- END OF CONTENT-->
+        <!-- Internal Navigation -->
+        <div class="internal-nav">
+          <h6>Jump To Section</h6>
+          <hr class="internal-hr">
+          <div class="internal-links">
+            <ul>
+              <li><a href="#top">Overview</a></li>
+              <li><a href="#why-use">Why Use Modules?</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#setup">Setup Modules For Use</a></li>
+              <li><a href="#export">Export</a></li>
+              <ul class="inner-ul">
+                <li class="inner-li"><a href="#named-export">Named Export</a></li>
+                <li class="inner-li"><a href="#default-export">Default Export</a></li>
+                <li class="inner-li"><a href="#alias-export">Export As Alias</a></li>
+              </ul>
+              <li><a href="#import">Import</a></li>
+              <ul class="inner-ul">
+                <li class="inner-li"><a href="#named-import">Named Import</a></li>
+                <li class="inner-li"><a href="#default-import">Default Import</a></li>
+                <li class="inner-li"><a href="#alias-import">Import With Alias</a></li>
+              </ul>
+              <li><a href="#tips">Tips</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -48,7 +356,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/src/script.js"></script>
-  
+
   <script script type='module'>
     import { navInsert } from '/src/utilities.js';
     // Sub Nav
@@ -58,7 +366,8 @@
     //Crumbs
     navInsert('/src/pages/languages/javascript/advanced-topics/crumbs.html', 'crumbs');
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>

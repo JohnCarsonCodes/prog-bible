@@ -48,9 +48,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: rgb(107, 107, 107);
 }
+
+.anchor {
+    padding-top: 15px;
+}
+
 section {
     padding: 30px; 
     width: 100%;
@@ -343,7 +348,9 @@ li {
 }
 
 .section-entry h4 {
-    font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--primary-color-dark);
 }
 
 .section-entry hr {

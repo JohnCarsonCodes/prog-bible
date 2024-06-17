@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing | Advanced Topics | JavaScript | Programming Bible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Navigation -->
+        <div id="subnav"></div>
+
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Navigation -->
+            <div id="sidebar"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs"></div>
+                        <li class="breadcrumb-item active" aria-current="page">Testing</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Content Start -->
+                <div class="entry-content">
+                    <h1 class="primary-color-dark mb-4 anchor" id="top">Testing</h1>
+                    <p class="mb-4">In JavaScript, testing means checking if your code works as it should by running it
+                        with different inputs and seeing what comes out. This helps make sure your code does what it's
+                        supposed to and catches any problems that might pop up. <br><br>
+
+                        You can test your code by simply running it yourself and watching how it behaves. Or, you can
+                        use special tools and frameworks that do the testing automatically. This automated testing is
+                        quicker and saves time because you can run it over and over without having to do it all by hand
+                        each time.</p>
+
+                    <!-- Syntax -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Syntax</h3>
+                            <div class="section-card d-flex flex-column">
+                                <p class="m-0">When you're testing something, like a piece of code in JavaScript,
+                                    there's a typical way you go about it. First, you set up the environment so
+                                    everything's ready to go. Then, you actually run the code you want to test, using
+                                    whatever inputs you need to check. After that, you check the results against what
+                                    you expected to happen. <br><br>
+
+                                    Here's a basic breakdown:
+                                <ul class="mb-4">
+                                    <li class="circle"><strong>Arrange:</strong> This is where you get everything set up
+                                        before you run the test. You prepare the conditions and inputs needed for the
+                                        test.</li>
+                                    <li class="circle"><strong>Act:</strong> This is where you actually run the code or
+                                        function you're testing, using the inputs you arranged.</li>
+                                    <li class="circle">
+                                        <strong>Assert:</strong> This is the part where you check the output from the
+                                        code against what you thought it should be. This helps you figure out if the
+                                        test worked like it was supposed to.
+                                    </li>
+                                </ul>
+                                For example, in a testing framework like Jest for JavaScript, this process is laid out
+                                clearly to help you make sure your code does what it's supposed to do.:
+                                </p>
+                                <pre><code class="language-javascript">test('Description of the test', () => {
+    // Arrange
+    // Set up any necessary data or variables
+
+    // Act
+    const result = functionToTest(input);
+
+    // Assert
+    expect(result).toBe(expectedOutput);
+});</code></pre>
+                            </div>
+                        </div>
+                    </div> <!-- End of Syntax Entry -->
+
+                    <!-- Why Use -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4 anchor" id="why-use">Why Use Testing</h3>
+
+                            <div class="section-card d-flex flex-column">
+                                <p>Imagine you're creating a video game where players can find power-ups to make them
+                                    stronger. There's a function you've written called
+                                    <em><strong>collectPowerUp</strong></em> that boosts the player's health whenever
+                                    they grab one of these power-ups. <br><br>
+
+                                    Now, to make sure this <em><strong>collectPowerUp</strong></em> function does what
+                                    it's supposed to do, you can create a test case. This test case is like a little
+                                    experiment that checks if the function works correctly. Here's how you might set up
+                                    a test case to test collectPowerUp:
+                                </p>
+                                <pre><code class='language-javascript mt-3 mb-3'>// utils.js 
+function collectPowerUp(player, powerUp) {
+    player.health += powerUp.value;
+}
+
+// testing.js
+test('collectPowerUp increases player health by 10', () => {
+    const player = { health: 100 };
+    const powerUp = { value: 10 };  
+
+    collectPowerUp(player, powerUp);    
+
+    expect(player.health).toBe(110);
+});</code></pre>
+                                <p>In this example, the test case checks whether the
+                                    <em><strong>collectPowerUp</strong></em> function works correctly by making sure it
+                                    boosts the player's health by 10 when they pick up a power-up worth 10 points. The
+                                    test case uses assertions to compare the expected outcome with what actually
+                                    happens. <br><br>
+
+                                    By writing and running this test case, you can make sure that the
+                                    <em><strong>collectPowerUp</strong></em> function does what it's supposed to
+                                    do—increasing the player's health accurately when they collect a power-up. This is
+                                    important because it helps find any potential mistakes or problems early on in the
+                                    game development process. It also gives you confidence that this part of the game
+                                    works correctly as you intended it to.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- END OF SECTION ENTRY -->
+
+                    <!-- Types of Testing -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4 anchor" id="types">Types of Testing</h3>
+                            <div class="section-card d-flex flex-column">
+                                <h4 class="anchor" id="unit-testing">Unit Testing</h4>
+                                <p class="mb-5">Unit testing is a method in software development where you test small
+                                    parts of your code, like functions, methods, or classes, to make sure they work
+                                    correctly on their own. It's like checking each piece of your video game to ensure
+                                    it functions properly before putting it all together. <br><br>
+
+                                    Think of it as building a video game level. Each element, like platforms or enemies,
+                                    has a specific role. Before assembling the entire level, you'd test each element
+                                    individually. For example, you'd check if a platform can support the player's weight
+                                    or if an enemy behaves as expected when it detects the player. <br><br>
+
+                                    Similarly, in programming, unit testing involves writing tests that examine these
+                                    individual pieces of code—functions, for instance—to confirm they do what they're
+                                    supposed to do. This process helps identify and fix any mistakes early in the game
+                                    development phase, ensuring that every part of the game works correctly when
+                                    combined.</p>
+                                <h4 class="anchor" id="integration-testing">Integration Testing</h4>
+                                <p class="mb-5">Integration testing in software development is like checking how
+                                    different parts of a video game work together as a complete experience. It's about
+                                    ensuring that all the elements—like characters, environments, and gameplay
+                                    mechanics—blend seamlessly to create a cohesive game. <br><br>
+
+                                    In programming terms, integration testing focuses on testing how various modules or
+                                    systems interact with each other. Imagine you're designing a multiplayer game: you'd
+                                    test how player movements synchronize across different devices, how the game server
+                                    handles simultaneous actions from multiple players, and how the scoring system
+                                    updates across all connected players in real-time. <br><br>
+
+                                    Similarly, in building software like an e-commerce platform, integration testing
+                                    would involve verifying how different components collaborate. For instance, you'd
+                                    test if the shopping cart updates the inventory correctly after a purchase, if the
+                                    payment gateway processes transactions smoothly, and if customer data securely flows
+                                    into the database. <br><br>
+
+                                    Integration testing ensures that all these interconnected parts function
+                                    harmoniously, handling various scenarios and inputs without issues, much like
+                                    ensuring a game runs smoothly across different devices and gameplay situations.</p>
+                                <h4 class="anchor" id="end-to-end-testing">End-To-End Testing</h4>
+                                <p class="mb-5">End-to-end testing in software development is like thoroughly playing
+                                    through an entire video game to make sure everything works smoothly from start to
+                                    finish. It's about ensuring that every aspect of the game—from the controls and
+                                    graphics to the story and gameplay mechanics—functions flawlessly and provides a
+                                    great gaming experience. <br><br>
+
+                                    Similarly, in programming, end-to-end testing involves testing the entire
+                                    application as if you were a real user interacting with it. Imagine you're playing a
+                                    complex role-playing game (RPG): you'd check if the character creation screen works
+                                    correctly, if the quests and dialogues progress smoothly, and if the inventory
+                                    management system updates properly as you collect items and weapons.<br><br>
+
+                                    For instance, if you're developing a banking app, end-to-end testing would involve
+                                    testing every step of the user journey: logging in securely, making deposits,
+                                    transferring funds between accounts, and checking account balances. It would
+                                    simulate different scenarios, like logging in with different user accounts, making
+                                    transactions of varying amounts, and ensuring that all financial data is accurately
+                                    recorded and updated.<br><br>
+
+                                    End-to-end testing ensures that the entire application functions seamlessly and
+                                    meets user expectations across all possible interactions and scenarios, much like
+                                    ensuring a video game delivers a satisfying experience from beginning to end.</p>
+                                <h4 class="anchor" id="ui-testing">UI Testing</h4>
+                                <p>UI testing in software development is like checking how user-friendly and intuitive a
+                                    video game interface is to ensure players have a smooth experience navigating
+                                    through the game world. It's about making sure that every button press, menu
+                                    selection, and interaction with characters feels natural and responsive. <br><br>
+
+                                    In programming terms, UI testing focuses on testing the visual aspects of an
+                                    application—like buttons, menus, and screens—to see how they behave when a player
+                                    interacts with them. Imagine you're playing a strategy game: you'd check if clicking
+                                    on the map correctly selects units, if the menu opens smoothly without delay, and if
+                                    the health bars update correctly during battles. <br><br>
+
+                                    For example, if you're creating a mobile game where players order food, UI testing
+                                    would involve checking how easy it is to use the app's interface. You'd test tasks
+                                    like browsing the menu, adding items to the cart, and completing the checkout
+                                    process. This testing ensures that every aspect of the user interface works as
+                                    intended, providing a seamless and enjoyable experience for players.<br><br>
+
+                                    UI testing is crucial because it helps identify and fix issues related to design,
+                                    layout, and usability early on in development. By ensuring the application meets
+                                    user expectations and functions smoothly, UI testing enhances overall quality and
+                                    satisfaction with the game.</p>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- Testing Loop -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4 anchor" id="testing-loop">The Testing Loop</h3>
+                            <div class="section-card d-flex flex-column">
+                                <p>In software development, a well-established testing loop ensures that code changes
+                                    are thoroughly evaluated for correctness and reliability before being integrated
+                                    into a project. This iterative process not only helps maintain code quality but also
+                                    prevents regressions and ensures that new features meet user expectations. Here's
+                                    how the typical testing loop unfolds:
+
+                                <ul>
+                                    <li class="circle mb-2"><strong>Code Changes:</strong> Developers make modifications
+                                        to the codebase, such as adding new features, fixing bugs, or improving existing
+                                        functionality. For example, in web development, this could involve adding new
+                                        interactive elements to a website, optimizing page loading times, or fixing
+                                        compatibility issues across different browsers.</li>
+                                    <li class="circle mb-2"><strong>Pull Request Creation:</strong> Once developers are
+                                        satisfied with their changes, they create a pull request (PR) to merge their
+                                        code into the main branch of the repository. This step initiates a review
+                                        process where team members can provide feedback and ensure that the changes
+                                        align with project standards and requirements.</li>
+                                    <li class="circle mb-2"><strong>Automated Testing:</strong> Tests are crucial in
+                                        verifying that the code changes work as intended and do not introduce unintended
+                                        issues. The testing phase typically includes:
+                                        <ul class="px-4">
+                                            <li class="mb-2 mt-2 square"><strong>Unit Tests:</strong> These focus on
+                                                testing individual components or functions in isolation. For instance,
+                                                in web development, unit tests might validate the behavior of specific
+                                                JavaScript functions that handle form validation or API requests.</li>
+                                            <li class='mb-2 square'><strong>Integration Tests:</strong> These verify
+                                                interactions between different modules or systems within the
+                                                application. For a web application, integration tests might ensure that
+                                                data flows correctly between frontend components and backend APIs, or
+                                                that user authentication processes function seamlessly.</li>
+                                            <li class="mb-2 square"><strong>End-to-End (E2E) Tests:</strong> These
+                                                simulate real user scenarios to validate the entire application
+                                                workflow. In web development, E2E tests could involve automated scripts
+                                                that navigate through different pages of a website, interact with form
+                                                inputs, submit orders, and verify the resulting changes in database
+                                                records.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="circle mb-2"><strong>Error Resolution:</strong> If any tests fail during
+                                        the automated testing phase, developers diagnose and address issues in their
+                                        local development environment. This step ensures that problems are identified
+                                        and resolved early in the development process, minimizing the impact on
+                                        subsequent stages.</li>
+                                    <li class="circle mb-2"><strong>Iteration and Validation:</strong> Developers repeat
+                                        the cycle of making code changes, running tests, and resolving errors until all
+                                        tests pass successfully. This iterative approach allows for continuous
+                                        improvement and validation of the codebase.</li>
+                                    <li class="circle mb-2"><strong>Merge and Deployment:</strong> Once all tests pass
+                                        and the pull request is approved by reviewers, the changes are merged into the
+                                        main branch of the repository. This integration step signifies that the code
+                                        changes have been validated and are ready for deployment to production or
+                                        further testing stages.</li>
+                                </ul>
+                                By following this testing loop, web developers ensure that their applications maintain
+                                high standards of reliability, performance, and user experience. It not only enhances
+                                the overall quality of the software but also promotes collaboration and confidence among
+                                development teams. <br><br>
+                                This approach to testing emphasizes the importance of thorough validation at each stage
+                                of the development lifecycle, ensuring that software meets functional requirements and
+                                performs reliably in production environments.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+
+
+                </div> <!-- END OF CONTENT-->
+
+                <!-- Internal Navigation -->
+                <div class="internal-nav">
+                    <h6>Jump To Section</h6>
+                    <hr class="internal-hr">
+                    <div class="internal-links">
+                        <ul>
+                            <li><a href="#top">Overview</a></li>
+                            <li><a href="#why-use">Why Use Testing</a></li>
+                            <li><a href="#types">Types of Testing</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#unit-testing">Unit Testing</a></li>
+                                <li class="inner-li"><a href="#integration-testing">Integration Testing</a></li>
+                                <li class="inner-li"><a href="#end-to-end-testing">End-To-End Testing</a></li>
+                                <li class="inner-li"><a href="#ui-testing">UI Testing</a></li>
+                            </ul>
+                            <li><a href="#testing-loop">The Testing Loop</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+
+    <script script type='module'>
+        import { navInsert } from '/src/utilities.js';
+        // Sub Nav
+        navInsert('/src/pages/languages/js-subnav.html', 'subnav');
+        // Sidebar
+        navInsert('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar');
+        //Crumbs
+        navInsert('/src/pages/languages/javascript/advanced-topics/crumbs.html', 'crumbs');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

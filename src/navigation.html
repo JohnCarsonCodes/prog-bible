@@ -1,86 +1,397 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/src/index.html"><img src="/assets/pb-logo-blk.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
-              Languages
-            </button>
-            <ul class="dropdown-menu flex-col p-0">
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/c.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/c-logo.png" alt="">
-                            <p>C</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/cpp.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/cpp-logo.png" alt="">
-                            <p>C++</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/csharp.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/csharp-logo.png" alt="">
-                            <p>C#</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/java.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/java-logo.png" alt="">
-                            <p>Java</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/javascript.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/javascript-logo.png" alt="">
-                            <p>JavaScript</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="/src/pages/languages/python.html">
-                        <div class='dropdown-card'>
-                            <img src="/assets/python-logo.png" alt="">
-                            <p>Python</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
-              Systems
-            </button>
-            <ul class="dropdown-menu flex-col p-0">
-                <li>
-                    <a class="dropdown-item" href="/src/pages/systems/git.html">
-                        <div class='dropdown-card'>
-                            <img src="" alt="">
-                            <p>Git</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="/src/index.html"><img src="/assets/pb-logo-blk.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown"
+            aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Languages-->
+        <div id="nav-container">
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Languages
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/c.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/c-logo.png" alt="">
+                                        <p>C</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/cpp.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/cpp-logo.png" alt="">
+                                        <p>C++</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/csharp.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/csharp-logo.png" alt="">
+                                        <p>C#</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/java.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/java-logo.png" alt="">
+                                        <p>Java</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/javascript.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/javascript-logo.png" alt="">
+                                        <p>JavaScript</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/languages/python.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/python-logo.png" alt="">
+                                        <p>Python</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Frameworks
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/angular.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/angular-logo.png" alt="">
+                                        <p>Angular</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/bootstrap.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/bootstrap-logo.png" alt="">
+                                        <p>Bootstrap</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/django.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/django-logo.png" alt="">
+                                        <p>DJango</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/nodejs.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/node-logo.png" alt="">
+                                        <p>Node.js</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/reactjs.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/react-logo.png" alt="">
+                                        <p>React.js</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/frameworks/vuejs.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/vue-logo.png" alt="">
+                                        <p>Vue.js</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Markup Languages -->
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Markup
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/html.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/html-logo.png" alt="">
+                                        <p>HTML</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/json.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/json-logo.png" alt="">
+                                        <p>JSON</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/latex.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/latex-logo.png" alt="">
+                                        <p>LateX</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/markdown.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/markdown-logo.png" alt="">
+                                        <p>Markdown</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/xml.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/xml-logo.png" alt="">
+                                        <p>XML</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/markup-languages/yaml.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/yaml-logo.png" alt="">
+                                        <p>YAML</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Stylesheet Languages -->
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Stylesheet
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/css.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/css-logo.png" alt="">
+                                        <p>CSS</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/less.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/less-logo.png" alt="">
+                                        <p>Less</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/postcss.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/post-logo.png" alt="">
+                                        <p>PostCSS</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/sass.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/sass-logo.png" alt="">
+                                        <p>SASS</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/stylus.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/stylus-logo.png" alt="">
+                                        <p>Stylus</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/stylesheet-languages/tailwind.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/tailwind-logo.png" alt="">
+                                        <p>Tailwind</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- LIbraries -->
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Libraries
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/jquery.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/jquery-logo.png" alt="">
+                                        <p>JQuery</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/numpy.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/numpy-logo.png" alt="">
+                                        <p>NumPY</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/pandas.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/pandas-logo.png" alt="">
+                                        <p>Pandas</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/react.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/react-logo.png" alt="">
+                                        <p>React</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/requests.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/requests-logo.png" alt="">
+                                        <p>Requests</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/libraries/tensorflow.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/tensorflow-logo.png" alt="">
+                                        <p>TensorFlow</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- IDE's -->
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            IDE's
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/android-studio.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/android-studio-logo.png" alt="">
+                                        <p>Android Studio</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/eclipse.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/eclipse-logo.png" alt="">
+                                        <p>Eclipse</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/intellij-idea.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/intellij-logo.png" alt="">
+                                        <p>IntelliJ IDEA</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/visual-studio.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/visual-studio-logo.png" alt="">
+                                        <p>Visual Studio</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/visual-studio-code.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/vsc-logo.png" alt="">
+                                        <p>Visual Studio Code</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/ides/xcode.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/xcode-logo.png" alt="">
+                                        <p>XCode</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse open-sans" id="navbarDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle ms-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Systems
+                        </button>
+                        <ul class="dropdown-menu flex-col p-0">
+                            <li>
+                                <a class="dropdown-item" href="/src/pages/systems/git.html">
+                                    <div class='dropdown-card'>
+                                        <img src="/assets/git.png" alt="">
+                                        <p>Git</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </nav>
+</nav>

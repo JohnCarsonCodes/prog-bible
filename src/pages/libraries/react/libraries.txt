@@ -1,0 +1,14 @@
+Create React App
+Material UI
+Styled Components
+MobX
+Enzyme
+Redux
+React Virtualized
+Redux Form
+React DnD
+React Intl
+React Context
+React Window
+React Query
+Zod

@@ -43,15 +43,26 @@
                 <div class="entry-content">
                     <h1 class="primary-color-dark mb-4">Document Object Model (DOM)</h1>
                     <p class="mb-4"></p>
-
-                    <!-- Syntax -->
-                    <div class="section-entry">
-                    </div>
-
                 </div>
             </div>
+            <!-- Internal Navigation -->
+            <div class="internal-nav">
+                <h6>Jump To Section</h6>
+                <hr class="internal-hr">
+                <div class="internal-links">
+                    <ul>
+                        <li><a href="#top">Overview</a></li>
+                        <ul class="inner-ul">
+                            <li class="inner-li"><a href="#">Inner Link</a></li>
+                        </ul>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -59,13 +70,16 @@
     <script src="/src/script.js"></script>
 
     <script script type='module'>
-        import { navInsert } from '/src/utilities.js';
+        import { navInsert, setActive } from '/src/utilities.js';
+        const path = '/src/pages/languages/javascript/interfaces/dom/sidebar.html';
+
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
-        navInsert('/src/pages/languages/javascript/interfaces/dom/sidebar.html', 'sidebar');
+        navInsert(path, 'sidebar');
         //Crumbs
         navInsert('/src/pages/languages/javascript/interfaces/crumbs.html', 'crumbs');
+        setActive(path, 'sidebar', 'dom');
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>

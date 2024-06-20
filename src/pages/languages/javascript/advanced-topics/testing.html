@@ -329,13 +329,14 @@ test('collectPowerUp increases player health by 10', () => {
     <script src="/src/script.js"></script>
 
     <script script type='module'>
-        import { navInsert } from '/src/utilities.js';
+        import { navInsert, setActive } from '/src/utilities.js';
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
         navInsert('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar');
         //Crumbs
         navInsert('/src/pages/languages/javascript/advanced-topics/crumbs.html', 'crumbs');
+        setActive('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar', 'testing');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>

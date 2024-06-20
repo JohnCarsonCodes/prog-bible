@@ -49,13 +49,15 @@
     <script src="/src/script.js"></script>
     
     <script script type='module'>
-        import { navInsert } from '/src/utilities.js';
+        import { navInsert, setActive } from '/src/utilities.js';
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
         navInsert('/src/pages/languages/javascript/built-in-objects/numbers-dates/sidebar.html', 'sidebar');
         //Crumbs
         navInsert('/src/pages/languages/javascript/built-in-objects/crumbs.html', 'crumbs');
+        // Set Active Sidebar Link
+        setActive('/src/pages/languages/javascript/built-in-objects/numbers-dates/sidebar.html', 'sidebar', 'numbers-dates');
     </script>
 
 </body>

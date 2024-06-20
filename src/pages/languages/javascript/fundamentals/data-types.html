@@ -54,13 +54,15 @@
     <script src="/src/script.js"></script>
     
     <script script type='module'>
-        import { navInsert } from '/src/utilities.js';
+        import { navInsert, setActive } from '/src/utilities.js';
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
         navInsert('/src/pages/languages/javascript/fundamentals/data-types/sidebar.html', 'sidebar');
         //Crumbs
         navInsert('/src/pages/languages/javascript/fundamentals/crumbs.html', 'crumbs');
+        // Set Active Sidebar Link
+        setActive('/src/pages/languages/javascript/fundamentals/data-types/sidebar.html', 'sidebar', 'data-types');
     </script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
 /* General Styling */
 
 * {
@@ -60,6 +62,12 @@ h5 {
     color: rgb(107, 107, 107);
 }
 
+h6 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color-dark);
+    font-size: 1.1rem;
+}
+
 .anchor {
     padding-top: 15px;
 }
@@ -67,6 +75,20 @@ h5 {
 section {
     padding: 30px; 
     width: 100%;
+}
+
+.inner-explain {
+    text-align: left;
+    margin: 10px 0 30px 0;
+    padding: 10px; 
+    background-color: rgb(242, 249, 255);
+    border: 2px solid rgba(225, 225, 225, 0.4)
+}
+
+.inject {
+    font-size: 0.85rem;
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
 }
 
 body {
@@ -483,4 +505,56 @@ th {
 
 .internal-nav a {
     text-decoration: none;
+}
+
+.resource-link {
+    background-color: rgb(243, 243, 243);
+    margin-top: 15px;
+    padding: 25px 0; 
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.resource-link h5 a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.inner-resource-link {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; 
+    margin-top: 20px; 
+}
+
+.inner-resource-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px; 
+    border-right: 2px solid var(--primary-color-dark);
+}
+
+.inner-resource-details img {
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+}
+
+.inner-resource-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-right: 40px; 
+    gap: 15px; 
+}
+
+.inner-resource-content a {
+    color: var(--primary-color);
+}
+
+.smaller-text {
+    font-size: 0.8rem;
 }

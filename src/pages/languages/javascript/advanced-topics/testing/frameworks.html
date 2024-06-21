@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks | Testing | Advanced Topics | JavaScript | Programming Bible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/pages/languages/language.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Navigation -->
+        <div id="subnav"></div>
+
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Navigation -->
+            <div id="sidebar"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs"></div>
+                        <li class="breadcrumb-item active" aria-current="page">Frameworks</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Content Start -->
+                <div class="entry-content">
+                    <h1 class="primary-color-dark mb-4 anchor" id="top">Frameworks</h1>
+                    <p class="mb-5">A framework is a foundational structure that developers use to build and organize
+                        software applications more efficiently and consistently. It provides a predefined set of tools,
+                        libraries, and best practices that streamline the development process, enabling developers to
+                        focus more on the functionality of their application rather than on low-level coding tasks.
+                        <br><br>
+                        Frameworks can be specific to certain types of development, such as web applications, mobile
+                        apps, or software testing, and they often encapsulate common tasks and patterns into reusable
+                        modules. By using a framework, developers benefit from a coherent architecture, modular design,
+                        and an extensive ecosystem of plugins and extensions, which can significantly reduce development
+                        time and improve code quality. Furthermore, frameworks often promote adherence to industry
+                        standards and best practices, which helps in maintaining code consistency, scalability, and ease
+                        of maintenance. <br><br>
+                        Whether it's a front-end framework like React or Angular, a back-end framework
+                        like Django or Express, or a testing framework like Jest or Mocha, these tools are indispensable
+                        in modern software development for building robust, maintainable, and high-performing
+                        applications.
+                    </p>
+
+                    <!-- ENTRY -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark anchor mb-5" id="components-and-features">Key Components and
+                                Features</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div class="mb-4"><strong><u>Test Runner</u></strong><br>
+                                    The test runner is the component that finds and executes tests. It often
+                                    provides options for running all tests or a subset of tests, and for configuring
+                                    how tests should be run.
+                                </div>
+                                <div class="mb-4"><strong><u>Assertion Library</u></strong><br>
+                                    Assertions are statements that check if a certain condition is true. If an
+                                    assertion fails, the test fails. Assertion libraries provide a set of functions
+                                    to perform these checks, such as <span class="inject">'expect'</span> in Jest or
+                                    <span class="inject">'assert'</span> in Chai.
+                                </div>
+                                <div class="mb-4"><strong><u>Mocking</u></strong><br>
+                                    Mocking allows you to simulate parts of your application, such as functions,
+                                    objects, or modules, to isolate the code being tested. This is useful for testing
+                                    components in isolation and controlling the behavior of dependencies.
+                                </div>
+                                <div class="mb-4"><strong><u>Test Fixtures</u></strong><br>
+                                    Fixtures are predefined data sets or conditions used to run tests. They help set up
+                                    the environment needed for the test and ensure consistency across test runs.
+                                </div>
+                                <div class="mb-4"><strong><u>Test Suites and Cases</u></strong><br>
+                                    Tests are often organized into suites (groups of related tests) and cases
+                                    (individual tests). This helps structure tests logically and makes it easier to
+                                    manage and understand the test code.
+                                </div>
+                                <div class="mb-4"><strong><u>Setup and Teardown</u></strong><br>
+                                    These are hooks provided by the framework to run code before and after each test or
+                                    test suite. They are useful for setting up the environment before tests run and
+                                    cleaning up afterward.
+                                </div>
+                                <div class="mb-4"><strong><u>Code Coverage</u></strong><br>
+                                    Many testing frameworks include tools for measuring code coverage, which indicates
+                                    how much of your code is exercised by your tests. This helps identify untested parts
+                                    of your application.
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark anchor mb-5" id="popular-frameworks">Popular Frameworks</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div>There are several popular frameworks for testing in JavaScript, each with its own
+                                    strengths and areas of focus. Here are some of the most widely used:</div>
+                                <div class="resource-link" id="jest">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://jestjs.io/" target="_blank">Jest</a></h5>
+                                            <img src="https://avatars.githubusercontent.com/u/103283236?s=280&v=4"
+                                                alt="">
+                                            <a href="https://jestjs.io/" target="_blank">https://jestjs.io</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Developed by Facebook, Jest is a comprehensive testing framework with
+                                                built-in mocking, assertion libraries, and test runners. It is
+                                                particularly popular for testing React applications.
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Configuration:</h6>
+                                                Zero Configuration. Jest works out of the box with minimal setup, making it easy for beginners to start testing quickly
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Snapshot Testing:</strong> Allows you to capture and compare the output of components over time, which is particularly useful for testing UI components.</div>
+                                                <div><strong>Mocking and Spying:</strong> Built-in support for mocking functions and modules, which simplifies the process of isolating the code under test.</div>
+                                                <div><strong>Code Coverage:</strong> Automatically generates code coverage reports without additional setup.</div>
+                                                <div><strong>Interactive Watch Mode:</strong> Re-runs tests related to the files changed during development, improving developer productivity​.</div>
+                                                <div><strong>Parallel Test Execution:</strong> Runs tests in parallel to improve speed and efficiency.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Ideal for projects where ease of use and built-in features like snapshot testing and mocking are essential. <br>
+                                                Widely used in React projects but versatile enough for other JavaScript frameworks and libraries​ .
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="mocha">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://mochajs.org/" target="_blank">Mocha</a></h5>
+                                            <img src="https://avatars.githubusercontent.com/u/8770005?v=4"
+                                                alt="">
+                                            <a href="https://mochajs.org/" target="_blank">https://mochajs.org</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Mocha is a flexible testing framework that works well with various
+                                                assertion libraries, such as Chai. It is known for its simplicity and
+                                                versatility in testing both front-end and back-end JavaScript
+                                                applications.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Requires more initial setup compared to Jest.</div>
+                                                <div>Needs to be configured with assertion libraries (like Chai) and mocking/stubbing tools (like Sinon) to provide a full testing environment</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Flexibility:</strong> Allows developers to choose their assertion, mocking, and spying libraries, offering more control over the testing setup.</div>
+                                                <div><strong>Asynchronous Testing:</strong> Strong support for testing asynchronous code, which is critical for modern JavaScript applications.</div>
+                                                <div><strong>Reporting:</strong> Extensive options for custom reporters to generate test results in different formats.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Preferred in projects that require a high degree of customization and control over the testing environment.<br>
+                                                Commonly used in Node.js applications and projects where asynchronous testing is crucial.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="jasmine">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://jasmine.github.io/" target="_blank">Jasmine</a></h5>
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Logo_jasmine.svg"
+                                                alt="">
+                                            <a href="https://jasmine.github.io/" target="_blank">https://jasmine.github.io</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Jasmine is a behavior-driven development (BDD) framework for testing
+                                                JavaScript. It comes with everything you need to write tests and is
+                                                often used for testing Angular applications.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Jasmine requires minimal configuration and can be set up quickly.</div>
+                                                <div>It provides a standalone distribution that includes everything needed to start writing tests.</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Behavior-Driven Development:</strong> Emphasizes writing tests in a readable format.</div>
+                                                <div><strong>Built-In Assertions and Spies:</strong> Includes a rich set of assertions and spying capabilities without needing additional libraries.</div>
+                                                <div><strong>Async Support:</strong> Provides robust support for asynchronous tests using <span class="inject">done</span> callbacks, <span class="inject">async/await</span>, or Promises.</div>
+                                                <div><strong>DOM-less Testing:</strong> Does not rely on a browser, making it suitable for testing Node.js applications.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Ideal for both front-end and back-end testing.<br>
+                                                Often used in Angular projects due to its integration with Angular CLI. <br>
+                                                Suitable for projects that prefer a BDD approach and require minimal external dependencies.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="cypress">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://www.cypress.io/" target="_blank">Cypress</a></h5>
+                                            <img src="https://docs.cypress.io/img/logo/cypress-logo-circle-dark.png"
+                                                alt="">
+                                            <a href="https://www.cypress.io/" target="_blank">https://www.cypress.io</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Cypress is an end-to-end testing framework designed for modern web
+                                                applications. It provides fast, reliable testing for UI interactions and
+                                                browser behavior.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Cypress is easy to set up with an installer that includes everything needed to start testing.</div>
+                                                <div>Provides a built-in dashboard for test management and visualization.</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>End-To-End Testing:</strong> Specializes in end-to-end testing with real browser interaction.</div>
+                                                <div><strong>Time Travel:</strong> Takes snapshots at each step, allowing developers to see what happened during the test.</div>
+                                                <div><strong>Automatic Waiting:</strong> Waits for commands and assertions to pass before moving on, reducing the need for explicit waits.</div>
+                                                <div><strong>Real-Time Reloads:</strong> Automatically reloads tests upon saving changes to the code.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Best for full end-to-end testing, especially for complex web applications.<br>
+                                                Suitable for developers looking for a comprehensive solution with minimal setup and powerful debugging capabilities.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="puppeteer">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://pptr.dev/" target="_blank">Puppeteer</a></h5>
+                                            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--DUP7aJUB--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/gpme2h882i6xab1cp3vt.png"
+                                                alt="">
+                                            <a href="https://pptr.dev/" target="_blank">https://pptr.dev</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Puppeteer is a Node.js library that provides a high-level API to control
+                                                Chrome or Chromium. It is often used for headless browser testing and
+                                                automating web page interactions.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Requires setting up with Node.js and installing via npm.</div>
+                                                <div>Configuration involves writing scripts to control and interact with the browser.</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Headless Browser:</strong> Controls Chrome or Chromium in headless mode for automated UI testing.</div>
+                                                <div><strong>Screenshot and PDF Generation:</strong> Can capture screenshots and create PDFs from web pages.</div>
+                                                <div><strong>Web Scraping:</strong> Capable of scraping content from websites.</div>
+                                                <div><strong>Automation:</strong> Automates form submissions, UI interactions, and other browser tasks.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Ideal for UI testing, web scraping, and automating browser tasks.<br>
+                                                Often used for generating pre-rendered content for single-page applications (SPAs).
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="qunit">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://qunitjs.com/" target="_blank">QUnit</a></h5>
+                                            <img src="https://images.credly.com/images/e288c4e4-b0d0-4849-bb62-0c44118ec4cb/qunit.png"
+                                                alt="">
+                                            <a href="https://qunitjs.com/" target="_blank">https://qunitjs.com</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                QUnit is a powerful, easy-to-use JavaScript unit testing framework. It is
+                                                used by the jQuery project and is suitable for testing any generic
+                                                JavaScript code.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Simple setup with minimal configuration, often used with HTML files for browser-based testing.</div>
+                                                <div>Can be integrated with Node.js for back-end testing.</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Simplicity:</strong> Focuses on being easy to use and understand.</div>
+                                                <div><strong>Modular:</strong> Provides a straightforward API for defining tests and assertions.</div>
+                                                <div><strong>Compatibility:</strong> Works well with other tools and libraries, making it versatile for different types of projects.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Suitable for both front-end and back-end testing.<br>
+                                                Commonly used in jQuery projects but adaptable to other environments. <br>
+                                                Ideal for projects that require simple and straightforward testing without extensive setup.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="ava">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5><a href="https://github.com/avajs/ava" target="_blank">AVA</a></h5>
+                                            <img src="https://avatars.githubusercontent.com/u/8527916?s=280&v=4"
+                                                alt="">
+                                            <a href="https://github.com/avajs/ava" target="_blank" class="smaller-text">https://github.com/avajs/ava</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                AVA is a minimalistic testing framework that runs tests concurrently,
+                                                providing fast test execution. It supports modern JavaScript features
+                                                out of the box.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Requires installation via npm and configuration in package.json.</div>
+                                                <div>Supports ES6, TypeScript, and other modern JavaScript features out of the box.</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>Concurrency:</strong> Runs tests concurrently for faster execution.</div>
+                                                <div><strong>Minimalism:</strong> Focuses on simplicity and minimal global state.</div>
+                                                <div><strong>Async Support:</strong> Designed for asynchronous testing with built-in support for <span class="inject">async/await</span>.</div>
+                                                <div><strong>Snapshots:</strong> Supports snapshot testing for UI components.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Best for projects that require fast and concurrent test execution.<br>
+                                                Suitable for modern JavaScript and TypeScript projects that leverage asynchronous code. <br>
+                                                Ideal for developers who prefer a minimalist approach to testing.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resource-link" id="testing-library">
+                                    <div class="inner-resource-link">
+                                        <div class="inner-resource-details">
+                                            <h5 class="text-center"><a href="https://testing-library.com/" target="_blank">Testing Library</a></h5>
+                                            <img src="https://testing-library.com/img/octopus-128x128.png"
+                                                alt="">
+                                            <a href="https://testing-library.com/" target="_blank" class="smaller-text">https://testing-library.com</a>
+                                        </div>
+                                        <div class="inner-resource-content">
+                                            <div class="mb-2">
+                                                Often used with Jest, the Testing Library family of libraries (such as
+                                                React Testing Library) provides utilities to test UI components by
+                                                simulating user interactions and behavior.
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Configuration:</h6>
+                                                <div>Typically used in conjunction with other frameworks like Jest.</div>
+                                                <div>Requires installation of specific packages depending on the library (e.g., React Testing Library).</div>
+                                            </div>
+                                            <div class="mb-2 d-flex flex-column gap-1">
+                                                <h6>Features:</h6>
+                                                <div><strong>User-Focused Testing:</strong> Emphasizes testing from the user’s perspective rather than the implementation details.</div>
+                                                <div><strong>Simple Queries:</strong> Provides simple and intuitive functions to query and interact with the DOM.</div>
+                                                <div><strong>Compatibility:</strong> Works with various front-end frameworks like React, Vue, and Angular.</div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <h6>Usage:</h6>
+                                                Ideal for testing UI components to ensure they behave as expected from a user’s perspective.<br>
+                                                Suitable for projects that prioritize maintainable and readable tests. <br>
+                                                Often used in conjunction with Jest for a complete testing solution.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+
+                </div> <!-- END OF CONTENT-->
+
+                <!-- Internal Navigation -->
+                <div class="internal-nav">
+                    <h6>Jump To Section</h6>
+                    <hr class="internal-hr">
+                    <div class="internal-links">
+                        <ul>
+                            <li><a href="#top">Overview</a></li>
+                            <li><a href="#components-and-features">Key Components and Features</a></li>
+                            <li><a href="#popular-frameworks">Popular Frameworks</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#jest">Jest</a></li> 
+                                <li class="inner-li"><a href="#mocha">Mocha</a></li> 
+                                <li class="inner-li"><a href="#jasmine">Jasmine</a></li> 
+                                <li class="inner-li"><a href="#cypress">Cypress</a></li> 
+                                <li class="inner-li"><a href="#puppeteer">Puppeteer</a></li> 
+                                <li class="inner-li"><a href="#qunit">QUnit</a></li> 
+                                <li class="inner-li"><a href="#ava">AVA</a></li>
+                                <li class="inner-li"><a href="#testing-library">Testing Library</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+
+    <script script type='module'>
+        import { navInsert, setActive } from '/src/utilities.js';
+        // Sub Nav
+        navInsert('/src/pages/languages/js-subnav.html', 'subnav');
+        // Sidebar
+        navInsert('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar');
+        //Crumbs
+        navInsert('/src/pages/languages/javascript/advanced-topics/testing/crumbs.html', 'crumbs');
+        setActive('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar', 'frameworks');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

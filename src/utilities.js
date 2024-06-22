@@ -74,3 +74,21 @@ export const setActive = async (file, elementID, targetElementID) => {
         console.error('Error:', error.message);
     }
 };
+
+export const recentUpdatesHome = async (file) => {
+    try {
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch file: ${response.statusText}`);
+        }
+
+        const content = await response.text();
+
+        console.log(content);
+        return content;
+
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}

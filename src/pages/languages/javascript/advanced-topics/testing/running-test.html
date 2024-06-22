@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Tests | Testing | Advanced Topics | JavaScript | Programming Bible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/pages/languages/language.css">
+    <link rel="stylesheet" href="/src/css/highlightjs.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <div id="nav-placeholder"></div>
+        <!-- Sub Navigation -->
+        <div id="subnav"></div>
+
+        <div class="content d-flex flex-row p-0">
+            <!-- Side Navigation -->
+            <div id="sidebar"></div>
+            <!-- Main Content -->
+            <div class="main-content d-flex flex-column m-0">
+                <!-- Breadcrumb -->
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb open-sans">
+                        <div class="breadcrumb-item crumbs" id="crumbs"></div>
+                        <li class="breadcrumb-item active" aria-current="page">Running Tests</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Content Start -->
+                <div class="entry-content">
+                    <h1 class="primary-color-dark mb-4 anchor" id="top">Running Tests</h1>
+                    <p class="mb-5">We are going to go through the process of utilizing tests from beginning until the
+                        end to ensure that our code is correct. For simplicity, we are going to be using the <a
+                            href="https://mochajs.org/" target="_blank">Mocha</a> framework.
+                    </p>
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="installation">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4">Installation</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div class="d-flex flex-column gap-1">
+
+                                    <div class="mb-4 anchor" id="initialize">
+                                        <h4>1. Initialize Your Project</h4>
+
+                                        <div class="ms-4">
+                                            <li class="circle">First, ensure you have Node.js and npm installed on your
+                                                machine as this is required to install Mocha.</li>
+                                            <li class="circle mb-2">Create a new directory for your project and navigate
+                                                into it</li>
+                                            <pre><code class="language-bash my-4">mkdir my-awesome-project
+cd my-awesome-project</code></pre>
+                                            <li class="circle mb-2">Initialize a new Node.js project by creating a <span
+                                                    class="inject">'package.json'</span> file</li>
+                                            <pre><code class="language-bash my-4">npm init -y</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 anchor" id="install">
+                                        <h4>2. Install Mocha</h4>
+
+                                        <div class="ms-4">
+                                            <li class="circle">Install Mocha as a development dependency</li>
+                                            <pre><code class="language-bash my-4">npm install --save-dev mocha</code></pre>
+                                            <div class="mb-3">After running this command, you will be asked to provide
+                                                details about your project. It's fine to skip some fields if you're not
+                                                ready to fill them in.</div>
+                                            <div>
+                                                <h5>What this command is doing:</h5>
+                                                <li><span class="inject">'npm install'</span> fetches a package from the
+                                                    internet and automatically installs any dependencies required for
+                                                    that package to function</li>
+                                                <li><span class="inject">'mocha'</span> is the intended framework you're
+                                                    wanting to download and utilize</li>
+                                                <li><span class="inject">'-D'</span> indicates that the package is a
+                                                    development dependency. This means it will be listed under the <span
+                                                        class="inject">'devDependencies'</span> section in the <span
+                                                        class="inject">'package.json'</span> file. Packages installed as
+                                                    development dependencies are only used during development and will
+                                                    not be included in the production bundle</li>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 anchor" id="create-directory">
+                                        <h4>3. Create the Test Directory</h4>
+
+                                        <div class="ms-4">
+                                            <li class="circle">Create a directory named <span class="inject">'test'</span>
+                                                to store your test files</li>
+                                            <pre><code class="language-bash my-4">mkdir test</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 anchor gap-2 d-flex flex-column" id="running-mocha">
+                                        <h4>4. Running Mocha</h4>
+                                        <div class="ms-4 gap-1 d-flex flex-column">
+                                            <div>After you've completed the installation, you should be able to locate
+                                                the packages and all of their dependencies in the new
+                                                <strong>nodes_modules</strong> folder.
+                                            </div>
+                                            <div>With Mocha installed as a dependecy, you can run it in two different
+                                                ways.</div>
+                                            <div>
+                                                <li class="circle">The first method, which essentially everyone would
+                                                    not recommend, is to call it straight drom the
+                                                    <strong>node_modules</strong> folder
+                                                </li>
+                                            </div>
+                                            <pre><code class="language-bash my-4">$ ./node_modules/mocha/bin/mocha</code></pre>
+                                            <div>
+                                                <li class="circle">Alternatively, you are able to add a script to your
+                                                    <span class="inject">'package.json'</span> file which is the
+                                                    recommended method. In this file, you can locate the <span
+                                                        class="inject">'scripts'</span> object and set the value of <span
+                                                        class="inject">'test'</span> to <span class="inject">'mocha'</span>
+                                                </li>
+                                            </div>
+                                            <pre><code class="language-bash my-4">"scripts": {
+  "test": "mocha"
+}</code></pre>
+                                            <div>With this completed, you are able to call Mocha using the following
+                                                command</div>
+                                            <pre><code class="language-bash my-4">$ npm test</code></pre>
+                                            <div>This command will allow you to run the full test suite automatically,
+                                                as opposed to running each test individually by hand in the
+                                                <strong>test</strong> directory.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="creating-tests">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-4">Creating Tests</h3>
+                            <div class="section-card d-flex flex-column gap-2">
+                                <div>We've made it this far, and we are ready to test! Now, we just need to learn how to
+                                    make the magic happen.</div>
+                                <h4 class="mt-4" id="create">1. Creating (describe/it)</h4>
+                                <div>In Mocha, you can organize your tests using the <span
+                                        class="inject">'describe'</span> function and create individual tests with the
+                                    <span class="inject">'it'</span> function. Let's break down what these two elements
+                                    do.
+                                    <li class="circle mt-3"><span class="inject">'describe'</span>: This block is used to
+                                        group related tests. It takes a string describing the group and a callback
+                                        function containing the tests.</li>
+                                    <li class="circle mb-3"><span class="inject">'it'</span>: Defines an individual test
+                                        case.
+                                        It takes a string describing the test and a callback function containing the
+                                        test logic.</li>
+                                </div>
+                                <div>Let'stake a look at what this looks like when implemented.</div>
+                                <pre><code class="language-javascript my-4">describe('String Utility', () => {
+  describe('.toUpperCase', () => {
+    it('should convert all characters to uppercase', () => {
+      // Your test goes here
+    });
+    it('should return an empty string when called on an empty string', () => {
+      // Your test goes here
+    });
+  });
+});</code></pre>
+                                <div>In this example, we are testing the <span class="inject">'toUpperCase'</span> method
+                                    of a hypothetical String Utility. This method should convert all characters in a
+                                    string to uppercase and handle the case of an empty string.</div>
+                                <div class="mt-2">The <span class="inject">'describe'</span> and <span
+                                        class="inject">'it'</span> functions both take two arguments: a descriptive string
+                                    and a callback function. While these functions offer flexibility, they are usually
+                                    utilized in a specific way: <span class="inject">'describe'</span> blocks are nested
+                                    to mirror the structure of your implementation code, and <span
+                                        class="inject">'it'</span> blocks are used to write individual tests. This method
+                                    helps create a test suite that is modular, maintainable, and clear.</div>
+
+                                <h4 class="mt-5" id="writing">2. Writing (assert)</h4>
+                                <div>When it comes time to actually write your tests, we will use the <span
+                                        class="inject">'assert.ok'</span> method which is conveniently provided by
+                                    Node.js. <br>
+                                    The function of tests are used to run a function and compare the result to what is
+                                    the expected outcome. Let's look at what we may be familiar with and how we'd use
+                                    our assert method.</div>
+                                <pre><code class="language-javascript my-4">const x = 3 * 3;</code></pre>
+                                <div>Here, we know that the value of <span class="inject">'x'</span> would equal
+                                    <strong>9</strong>. Traditionally if we were wanting to check this value, we could
+                                    use an <span class="inject">'if'</span> statement to check the value is expected.
+                                </div>
+                                <pre><code class="language-javascript my-4">if (x !== 9) {
+    throw 'Failure: x does not equal 9';                                    
+};</code></pre>
+                                <div>With <span class="inject">'assert.ok'</span> however, we can simplifiy this process
+                                    as it allows the comparison of values and throws errors if necessary in a single
+                                    function call. This can be imported into your file by using <span
+                                        class="inject">'const assert = require('assert');'</span>. Now our function would
+                                    look like this.</div>
+                                <pre><code class="language-javascript my-4">const assert = require('assert');
+assert.ok(x === 9);</code></pre>
+                                <div>We know that <strong>9</strong> is our expected outcome, so in this scenario, an
+                                    error would not be thrown. If we ended up with a difference in the expected outcome,
+                                    an <span class="inject">'AssertionError'</span> would be throw. This would advise our
+                                    program that a test failed and an error message would be logged.</div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="testing-phases">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-5">Testing Phases</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div>When conducting JavaScript testing, it's crucial to divide a test into three
+                                    distinct phases: <strong>setup</strong>, <strong>exercise</strong>, and
+                                    <strong>verify</strong>. This clear delineation of steps enhances the reliability,
+                                    maintainability, and clarity of your tests. <br> <br>
+                                    Here's a breakdown of these phases:
+                                    <div class="mt-2">
+                                        <ul>
+                                            <li><strong>Setup</strong>: Initialize objects, variables, and conditions
+                                                that are necessary for your test to run.</li>
+                                            <li><strong>Exercise</strong>: Execute the functionality that you are
+                                                testing.</li>
+                                            <li><strong>Verify</strong>: Compare the actual outcomes with the expected
+                                                results using an assertion library.</li>
+                                        </ul>
+                                    </div>
+                                    By distinctly separating these phases, your tests will become more readable, easier
+                                    to modify, and simpler to validate. <br><br>
+                                    Let's take a look at this in action.
+                                    <pre><code class="language-javascript my-4">const assert = require('assert');
+
+describe('.push', () => {
+    it('should add an element to the end of an array', () => {
+        assert.ok(['Mario', 'Grand Theft Auto', 'Overwatch'].push('Zelda') === 4);
+    });
+});</code></pre>
+                                    vs
+                                    <pre><code class="language-javascript my-4">const assert = require('assert');
+
+describe('.push', () => {
+    it('should add an element to the end of an array', () => {
+        // Setup
+        const newGame = 'Zelda'
+        const outcome = 4;
+        const games = ['Mario', 'Grand Theft Auto', 'Overwatch'];
+
+        // Exercise
+        const addGame = games.push(newGame);
+        const gameCount = games.length;
+
+        // Verify
+        assert.ok(gameCount === outcome);
+    });
+});</code></pre>
+                                    Both of these tests achieve the same outcome of confirming the lengh of the array
+                                    after an item was added. However, in terms of readability and understanding, the
+                                    second approach makes it much easier to modify and validate.
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="teardown">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-5">Teardown</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div>Up to now, we've been writing a single test within an it() block. However, in many
+                                    cases, we need to write numerous tests for a particular feature, and these tests are
+                                    run one after another. <br><br>
+
+                                    Running multiple tests can create problems if they alter the testing environment, as
+                                    modifications in one test might influence the next. Examples of common environmental
+                                    changes include:
+                                    <br><br>
+                                    <ul>
+                                        <li class="circle">Modifying global variables or state</li>
+                                        <li class="circle">Changing network configurations</li>
+                                        <li class="circle">Manipulating user session data</li>
+                                    </ul>
+                                    To prevent these issues, we often include a teardown step at the end of our tests.
+                                    The teardown phase resets the environment, ensuring that each test is isolated
+                                    before the next one begins. Although this isn't necessary in every instance, it's
+                                    crucial to use when it's needed. This provides two main benefits:
+                                    <br><br>
+                                    <ul>
+                                        <li class="circle">Environmental changes introduced by one test do not impact
+                                            the others.</li>
+                                        <li class="circle">Isolated tests can be run in any sequence</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="my-3 anchor" id="teardown-usage">Usage</h4>
+                                    <div>
+                                        Let's say we are testing a simple video game system where players can log in and
+                                        log out. We want to ensure that the player state is properly reset after each
+                                        test. <br><br>
+                                        Here’s a simple implementation of the game functions:
+                                        <pre><code class="language-javascript my-4">// game.js
+let currentPlayer = null;
+
+function login(playerName) {
+  currentPlayer = playerName;
+}
+
+function logout() {
+  currentPlayer = null;
+}
+
+function getCurrentPlayer() {
+  return currentPlayer;
+}
+
+module.exports = { login, logout, getCurrentPlayer };</code></pre>
+                                        Now, we'll write tests for these functions and include a teardown to reset the
+                                        player state after each test.
+                                        <pre><code class="language-javascript my-4">// test/game.test.js
+const assert = require('chai').assert;
+const { login, logout, getCurrentPlayer } = require('../game');
+
+describe('Player Login System', function() {
+  afterEach(function() {
+    logout();
+  });
+
+  it('should log in a player', function() {
+    login('Player1');
+    assert.equal(getCurrentPlayer(), 'Player1');
+  });
+
+  it('should log out a player', function() {
+    login('Player2');
+    logout();
+    assert.isNull(getCurrentPlayer());
+  });
+
+  it('should return null if no player is logged in', function() {
+    assert.isNull(getCurrentPlayer());
+  });
+});</code></pre>
+                                        <h4 class="my-3 anchor" id="teardown-explanation">Explanation</h4>
+                                        Let's get an idea what we are looking at with the provided code. <br><br>
+                                        Our <strong>Teardown Function</strong> would be the <span class="inject">'afterEach(function() { logout(); });'</span> part of the code. <br><br>
+                                        The <span class="inject">'afterEach'</span> function is a Mocha hook that runs after each test case. In this case, it ensures that the <span class="inject">'logout'</span> function is called to reset the <span class="inject">'currentPlayer'</span> state. <br><br>
+                                        Our three test were created to ensure that the <span class="inject">'currentPlayer'</span> is correctly set when logged in, logs a character in and out then asserts that the <span class="inject">'currentPlayer'</span> is <span class="inject">'null'</span>, and finally asserts that the <span class="inject">'currentPlayer'</span> is <span class="inject">'null'</span> if no player is logged in. <br><br>
+                                        Without the teardown function, the state of <span class="inject">'currentPlayer'</span> could persist between tests, leading to false positives or negatives. By resetting the state after each test, we ensure that each test is isolated and independent, providing accurate results.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                </div> <!-- END OF CONTENT-->
+
+                <!-- Internal Navigation -->
+                <div class="internal-nav">
+                    <h6>Jump To Section</h6>
+                    <hr class="internal-hr">
+                    <div class="internal-links">
+                        <ul>
+                            <li><a href="#top">Overview</a></li>
+                            <li><a href="#installation">Installation</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#initialize">1. Initialize</a></li>
+                                <li class="inner-li"><a href="#install">2. Install Mocha</a></li>
+                                <li class="inner-li"><a href="#create-directory">3. Create the Test Directory</a></li>
+                                <li class="inner-li"><a href="#running-mocha">4. Running Mocha</a></li>
+                            </ul>
+                            <li><a href="#creating-tests">Creating Tests</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#create">1. Create (describe/it)</a></li>
+                                <li class="inner-li"><a href="#writing">2. Writing (assert)</a></li>
+                            </ul>
+                            <li><a href="#testing-phases">Testing Phases</a></li>
+                            <li><a href="#testing-phases">Teardown</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#teardown-usage">Usage</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+
+    <script type='module'>
+        import { navInsert, setActive } from '/src/utilities.js';
+        // Sub Nav
+        navInsert('/src/pages/languages/js-subnav.html', 'subnav');
+        // Sidebar
+        navInsert('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar');
+        //Crumbs
+        navInsert('/src/pages/languages/javascript/advanced-topics/testing/crumbs.html', 'crumbs');
+        setActive('/src/pages/languages/javascript/advanced-topics/testing/sidebar.html', 'sidebar', 'running-tests');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

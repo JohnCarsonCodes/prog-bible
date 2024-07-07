@@ -49,6 +49,31 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.int-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.int-gap span a, .int-gap a {
+    color: var(--primary-color);
+}
+
+.int-gap span a:hover, .int-gap a:hover {
+    color: var(--primary-color-dark);
+}
+
+.inner-int-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inner-int-gap strong {
+    color: var(--primary-color-dark);
+}
+
 nav, body, section, article, footer {
     display: flex;
 }
@@ -373,7 +398,7 @@ li {
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    margin: 15px 20px 30px 20px;
+    margin: 30px 0px;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -398,7 +423,12 @@ li {
 }
 
 .section-title {
-    margin: 0 15px;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title h3 {
+    margin: 15px 0 20px 0;
 }
 
 .section-card a {

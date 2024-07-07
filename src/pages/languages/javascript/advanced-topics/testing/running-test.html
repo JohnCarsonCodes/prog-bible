@@ -97,7 +97,8 @@ cd my-awesome-project</code></pre>
                                         <h4>3. Create the Test Directory</h4>
 
                                         <div class="ms-4">
-                                            <li class="circle">Create a directory named <span class="inject">'test'</span>
+                                            <li class="circle">Create a directory named <span
+                                                    class="inject">'test'</span>
                                                 to store your test files</li>
                                             <pre><code class="language-bash my-4">mkdir test</code></pre>
                                         </div>
@@ -123,8 +124,9 @@ cd my-awesome-project</code></pre>
                                                 <li class="circle">Alternatively, you are able to add a script to your
                                                     <span class="inject">'package.json'</span> file which is the
                                                     recommended method. In this file, you can locate the <span
-                                                        class="inject">'scripts'</span> object and set the value of <span
-                                                        class="inject">'test'</span> to <span class="inject">'mocha'</span>
+                                                        class="inject">'scripts'</span> object and set the value of
+                                                    <span class="inject">'test'</span> to <span
+                                                        class="inject">'mocha'</span>
                                                 </li>
                                             </div>
                                             <pre><code class="language-bash my-4">"scripts": {
@@ -157,7 +159,8 @@ cd my-awesome-project</code></pre>
                                         class="inject">'describe'</span> function and create individual tests with the
                                     <span class="inject">'it'</span> function. Let's break down what these two elements
                                     do.
-                                    <li class="circle mt-3"><span class="inject">'describe'</span>: This block is used to
+                                    <li class="circle mt-3"><span class="inject">'describe'</span>: This block is used
+                                        to
                                         group related tests. It takes a string describing the group and a callback
                                         function containing the tests.</li>
                                     <li class="circle mb-3"><span class="inject">'it'</span>: Defines an individual test
@@ -176,15 +179,18 @@ cd my-awesome-project</code></pre>
     });
   });
 });</code></pre>
-                                <div>In this example, we are testing the <span class="inject">'toUpperCase'</span> method
+                                <div>In this example, we are testing the <span class="inject">'toUpperCase'</span>
+                                    method
                                     of a hypothetical String Utility. This method should convert all characters in a
                                     string to uppercase and handle the case of an empty string.</div>
                                 <div class="mt-2">The <span class="inject">'describe'</span> and <span
-                                        class="inject">'it'</span> functions both take two arguments: a descriptive string
+                                        class="inject">'it'</span> functions both take two arguments: a descriptive
+                                    string
                                     and a callback function. While these functions offer flexibility, they are usually
                                     utilized in a specific way: <span class="inject">'describe'</span> blocks are nested
                                     to mirror the structure of your implementation code, and <span
-                                        class="inject">'it'</span> blocks are used to write individual tests. This method
+                                        class="inject">'it'</span> blocks are used to write individual tests. This
+                                    method
                                     helps create a test suite that is modular, maintainable, and clear.</div>
 
                                 <h4 class="mt-5" id="writing">2. Writing (assert)</h4>
@@ -205,13 +211,15 @@ cd my-awesome-project</code></pre>
                                 <div>With <span class="inject">'assert.ok'</span> however, we can simplifiy this process
                                     as it allows the comparison of values and throws errors if necessary in a single
                                     function call. This can be imported into your file by using <span
-                                        class="inject">'const assert = require('assert');'</span>. Now our function would
+                                        class="inject">'const assert = require('assert');'</span>. Now our function
+                                    would
                                     look like this.</div>
                                 <pre><code class="language-javascript my-4">const assert = require('assert');
 assert.ok(x === 9);</code></pre>
                                 <div>We know that <strong>9</strong> is our expected outcome, so in this scenario, an
                                     error would not be thrown. If we ended up with a difference in the expected outcome,
-                                    an <span class="inject">'AssertionError'</span> would be throw. This would advise our
+                                    an <span class="inject">'AssertionError'</span> would be throw. This would advise
+                                    our
                                     program that a test failed and an error message would be logged.</div>
                             </div>
                         </div>
@@ -278,7 +286,8 @@ describe('.push', () => {
                         <div class="section-title">
                             <h3 class="primary-color-dark mb-5">Teardown</h3>
                             <div class="section-card d-flex flex-column">
-                                <div>Up to now, we've been writing a single test within an it() block. However, in many
+                                <div>Up to now, we've been writing a single test within an <span
+                                        class="inject">'it'</span> block. However, in many
                                     cases, we need to write numerous tests for a particular feature, and these tests are
                                     run one after another. <br><br>
 
@@ -293,7 +302,13 @@ describe('.push', () => {
                                     </ul>
                                     To prevent these issues, we often include a teardown step at the end of our tests.
                                     The teardown phase resets the environment, ensuring that each test is isolated
-                                    before the next one begins. Although this isn't necessary in every instance, it's
+                                    before the next one begins. Think of it as you wanted to start a brand new save in a
+                                    video game. If
+                                    you don't want a new game+, then you need to make sure all progress is reset to 0
+                                    before
+                                    launching starting a new one. Sometimes you don't want all the abilities you've
+                                    unlocked at the start of a new playthrough!<br><br>
+                                    Although this isn't necessary in every instance, it's
                                     crucial to use when it's needed. This provides two main benefits:
                                     <br><br>
                                     <ul>
@@ -309,8 +324,7 @@ describe('.push', () => {
                                         log out. We want to ensure that the player state is properly reset after each
                                         test. <br><br>
                                         Here’s a simple implementation of the game functions:
-                                        <pre><code class="language-javascript my-4">// game.js
-let currentPlayer = null;
+                                        <pre><code class="language-javascript my-4">let currentPlayer = null;
 
 function login(playerName) {
   currentPlayer = playerName;
@@ -327,8 +341,7 @@ function getCurrentPlayer() {
 module.exports = { login, logout, getCurrentPlayer };</code></pre>
                                         Now, we'll write tests for these functions and include a teardown to reset the
                                         player state after each test.
-                                        <pre><code class="language-javascript my-4">// test/game.test.js
-const assert = require('chai').assert;
+                                        <pre><code class="language-javascript my-4">const assert = require('chai').assert;
 const { login, logout, getCurrentPlayer } = require('../game');
 
 describe('Player Login System', function() {
@@ -353,11 +366,153 @@ describe('Player Login System', function() {
 });</code></pre>
                                         <h4 class="my-3 anchor" id="teardown-explanation">Explanation</h4>
                                         Let's get an idea what we are looking at with the provided code. <br><br>
-                                        Our <strong>Teardown Function</strong> would be the <span class="inject">'afterEach(function() { logout(); });'</span> part of the code. <br><br>
-                                        The <span class="inject">'afterEach'</span> function is a Mocha hook that runs after each test case. In this case, it ensures that the <span class="inject">'logout'</span> function is called to reset the <span class="inject">'currentPlayer'</span> state. <br><br>
-                                        Our three test were created to ensure that the <span class="inject">'currentPlayer'</span> is correctly set when logged in, logs a character in and out then asserts that the <span class="inject">'currentPlayer'</span> is <span class="inject">'null'</span>, and finally asserts that the <span class="inject">'currentPlayer'</span> is <span class="inject">'null'</span> if no player is logged in. <br><br>
-                                        Without the teardown function, the state of <span class="inject">'currentPlayer'</span> could persist between tests, leading to false positives or negatives. By resetting the state after each test, we ensure that each test is isolated and independent, providing accurate results.
+                                        Our <strong>Teardown Function</strong> would be the <span
+                                            class="inject">'afterEach(function() { logout(); });'</span> part of the
+                                        code. <br><br>
+                                        The <span class="inject">'afterEach'</span> function is a Mocha hook that runs
+                                        after each test case. In this case, it ensures that the <span
+                                            class="inject">'logout'</span> function is called to reset the <span
+                                            class="inject">'currentPlayer'</span> state. <br><br>
+                                        Our three test were created to ensure that the <span
+                                            class="inject">'currentPlayer'</span> is correctly set when logged in, logs
+                                        a character in and out then asserts that the <span
+                                            class="inject">'currentPlayer'</span> is <span class="inject">'null'</span>,
+                                        and finally asserts that the <span class="inject">'currentPlayer'</span> is
+                                        <span class="inject">'null'</span> if no player is logged in. <br><br>
+                                        Without the teardown function, the state of <span
+                                            class="inject">'currentPlayer'</span> could persist between tests, leading
+                                        to false positives or negatives. By resetting the state after each test, we
+                                        ensure that each test is isolated and independent, providing accurate results.
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="hooks">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark mb-5">Hooks</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div>At this point we've explored the four main phases of a test: setup, exercise,
+                                    verify, and teardown. Throughout the course of your coding project, you may find
+                                    that the setup and teardown may be identical across a bunch of different tests.
+                                    <br><br>
+
+                                    Hear us out. Think of setup and teardown as the preparation and cleanup when playing
+                                    multiple levels in a video game. While each level has unique challenges and goals
+                                    (exercise and verify), the preparation (setup) and cleanup (teardown) are often the
+                                    same. The Mocha test framework provides functions, or hooks, that help us reduce
+                                    repetition, streamline our tests, and control their execution more
+                                    precisely.<br><br>
+                                    These hooks are like kitchen helpers that automatically handle the repetitive tasks
+                                    for you:
+                                    <ul class="mt-2">
+                                        <li class="circle"><span class="inject">'beforeEach(callback)'</span>: Runs the
+                                            callback before each test, like preparing your character and environment
+                                            before entering each level.</li>
+                                        <li class="circle"><span class="inject">'afterEach(callback)'</span>: Runs the
+                                            callback after each test, similar to saving progress and resetting the
+                                            environment after completing each level.</li>
+                                        <li class="circle"><span class="inject">'before(callback)'</span>: Runs the
+                                            callback before the first test, akin to setting up the game console and
+                                            loading the game before starting the first level.</li>
+                                        <li class="circle"><span class="inject">'after(callback)'</span>: Runs the
+                                            callback after the last test, like shutting down the game and putting away
+                                            the console after finishing the last level.</li>
+                                    </ul>
+                                    Each hook accepts a callback function that is executed at specific times during the
+                                    testing process. The <span class="inject">before...</span> hooks naturally run
+                                    before tests and are perfect for
+                                    isolating the setup steps. Meanwhile, the <span class="inject">after...</span> hooks
+                                    are executed after tests
+                                    and are ideal for isolating the teardown steps. This approach helps maintain a clean
+                                    and organized testing process, much like having a well-prepared gaming routine helps
+                                    streamline playing through levels. <br><br>
+                                    But how would this work in practice?
+                                </div>
+                                <h4 class="mt-5">Setting Up Our Example Code</h4>
+                                Let's consider a simple game setup where we initialize a player's state, start a level,
+                                and reset the game state.
+                                <pre><code class="language-javascript my-4">let player = null;
+
+function initializePlayer(name) {
+  player = { name: name, level: 1, score: 0 };
+}
+
+function startLevel(level) {
+  player.level = level;
+}
+
+function resetGame() {
+  player = null;
+}
+
+function getPlayer() {
+  return player;
+}
+
+module.exports = { initializePlayer, startLevel, resetGame, getPlayer };</code></pre>
+                                <h4 class="anchor mt-5" id="before-after">Before/After Callback</h4>
+                                <pre><code class="language-javascript my-4">const assert = require('chai').assert;
+const { initializePlayer, startLevel, resetGame, getPlayer } = require('../game');
+
+describe('Game Initialization', function() {
+  before(function() {
+    initializePlayer('Player1');
+  });
+
+  it('should set up the player correctly before tests', function() {
+    const player = getPlayer();
+    assert.equal(player.name, 'Player1');
+    assert.equal(player.level, 1);
+    assert.equal(player.score, 0);
+  });
+
+  after(function() {
+    resetGame();
+  });
+});</code></pre>
+                                <div>
+                                    In this code, the <span class="inject">'before'</span> function sets up the game
+                                    environment a single time before all the tests occur by initializing the player.
+                                    After
+                                    the test runs, the <span class="inject">'after'</span> function cleans up the game
+                                    environment by resetting the game state by utilizing the <span
+                                        class="inject">'resetGame'</span> function. There is only 1 test in this suite
+                                    so there is only the need for a single before and after hook.
+                                </div>
+                                <h4 class="anchor mt-5" id="beforeeach-aftereach">BeforeEach/AfterEach Callback</h4>
+                                <pre><code class="language-javascript my-4">const assert = require('chai').assert;
+const { initializePlayer, startLevel, resetGame, getPlayer } = require('../game');
+
+describe('Level Progression', function() {
+  beforeEach(function() {
+    initializePlayer('Player1');
+  });
+
+  it('should start level 2 correctly', function() {
+    startLevel(2);
+    const player = getPlayer();
+    assert.equal(player.level, 2);
+  });
+
+  it('should start level 3 correctly', function() {
+    startLevel(3);
+    const player = getPlayer();
+    assert.equal(player.level, 3);
+  });
+
+  afterEach(function() {
+    resetGame();
+  });
+});</code></pre>
+                                <div>
+                                    In this code, the <span class="inject">'beforeEach'</span> function how will run and set up the game environment prior to each test within the testing suite.
+                                    After
+                                    each test runs, the <span class="inject">'afterEach'</span> function cleans upthe game
+                                    environment by resetting the game state by utilizing the <span
+                                        class="inject">'resetGame'</span> function. It's almost as if each <span class="inject">'it'</span> block is sandwhiched between the callbacks separately.
                                 </div>
                             </div>
                         </div>
@@ -385,9 +540,15 @@ describe('Player Login System', function() {
                                 <li class="inner-li"><a href="#writing">2. Writing (assert)</a></li>
                             </ul>
                             <li><a href="#testing-phases">Testing Phases</a></li>
-                            <li><a href="#testing-phases">Teardown</a></li>
+                            <li><a href="#teardown">Teardown</a></li>
                             <ul class="inner-ul">
                                 <li class="inner-li"><a href="#teardown-usage">Usage</a></li>
+                            </ul>
+                            <li><a href="#hooks">Hooks</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#before-after">Before/After Callback</a></li>
+                                <li class="inner-li"><a href="#beforeeach-aftereach">BeforeEach/AfterEach Callback</a>
+                                </li>
                             </ul>
                         </ul>
                     </div>

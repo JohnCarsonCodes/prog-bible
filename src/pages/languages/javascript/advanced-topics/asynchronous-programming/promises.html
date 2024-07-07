@@ -12,7 +12,6 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="/src/pages/languages/language.css">
     <link rel="stylesheet" href="/src/css/highlightjs.css">
 </head>
 
@@ -39,6 +38,594 @@
                 <!-- Content Start -->
                 <div class="entry-content">
                     <h1 class="primary-color-dark mb-4 anchor" id="top">Promises</h1>
+                    <p>In JavaScript, asynchronous operations are those that don't happen instantly. Think
+                        of them like side quests in a video game: you start them, and they might take a while to
+                        complete. While you're waiting for them to finish, you can continue playing the main game.
+                        <br><br>
+                        A <strong>Promise</strong> is a special JavaScript object that helps you handle these side
+                        quests (asynchronous
+                        operations). It represents a value that might not be available yet but will be resolved in the
+                        future. Promises have three states:
+                    <ul>
+                        <li><strong>Pending:</strong> The initial state, neither fulfilled nor rejected.</li>
+                        <li><strong>Fulfilled:</strong> The operation completed successfully.</li>
+                        <li><strong>Rejected:</strong> The operation failed.</li>
+                    </ul>
+                    </p>
+
+                    <!-- Syntax -->
+                    <div class="section-entry" id="syntax">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Syntax</h3>
+                            <div class="section-card d-flex flex-column">
+                                <pre><code class="language-javascript">let response = new Promise((resolve, reject) => { ... });
+
+// Example Basic
+let response = new Promise((resolve, reject) => {
+    resolve('Immediate data fetch!').
+});
+
+// Example With 'await'
+let response = new Promise((resolve, reject) => {
+    resolve('Awaited data fetch!').
+});</code></pre>
+                                <p class="m-0">The code above is a <strong>promise constructor</strong> that creates a
+                                    new promise. The constructor function takes an executor function with two
+                                    parameters: <span class="inject">'resolve'</span> and <span
+                                        class="inject">'reject'</span>. <br><br>
+                                    The <strong>executor function</strong> (<span class="inject"> '{ ... }' </span>)
+                                    contains the asynchronous operation that will be performed. In the example, the
+                                    promise is resolved with the
+                                    message 'Immediate data fetch!'. <br><br>
+                                    With Promises, you can also use the <span class="inject">'await'</span> keyword.
+                                    This pauses the execution of the
+                                    surrounding async function until the promise is resolved. Once resolved, the result
+                                    ('Awaited data fetch!') is assigned to the response variable.</p>
+                            </div>
+                        </div>
+                    </div> <!-- End of Syntax Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry" id="why-use-promises">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Why Use Promises?</h3>
+                            <div class="section-card d-flex flex-column">
+                                <div>Using async functions and promises in JavaScript is essential for managing
+                                    asynchronous operations efficiently. Here’s a detailed explanation of why they are
+                                    useful.</div>
+                                <div class="int-gap">
+                                    <div class="anchor inner-int-gap" id="improved-readability">
+                                        <div>
+                                            <h4>Improved Code Readability</h4>
+                                        </div>
+                                        <div><strong>Sequential Logic:</strong> Promises enable you to write
+                                            asynchronous code that appears more sequential and logical. This is achieved
+                                            through chaining <span class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/then.html"
+                                                    target="_blank">'.then'</a></span> methods, which makes the flow of
+                                            data and operations clearer.</div>
+                                        <div>
+                                            <pre><code class="language-javascript">// Example 
+async function fetchData() {
+    try {
+        let response = await fetch('https://api.example.com/game_data');
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                                        </div>
+                                        <div>Here, the code reads like a series of steps, making it easier to follow.
+                                        </div>
+                                    </div>
+                                    <div class="anchor inner-int-gap" id="better-error-handling">
+                                        <div>
+                                            <h4>Better Error Handling</h4>
+                                        </div>
+                                        <div><strong>Try/Catch Blocks:</strong> With <span class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/async-await.html"
+                                                    target="_blank">'async/await'</a></span>, you can use <span
+                                                class="inject">'try'</span> and <span class="inject">'catch'</span>
+                                            blocks to handle errors, similar to synchronous code. This consolidates
+                                            error handling into a single place, making it more organized and easier
+                                            to
+                                            manage.</div>
+                                        <div>
+                                            <pre><code class="language-javascript">// Example
+function fetchData()
+    .then(response => processResponse(response))
+    .then(data => displayData(data))
+    .catch(error => handleError(error));</code></pre>
+                                        </div>
+                                        <div>In this example, all potential errors are handled within the catch
+                                            block,
+                                            providing a clear structure for error management.</div>
+                                    </div>
+                                    <div class="anchor inner-int-gap" id="avoiding-callback">
+                                        <div>
+                                            <h4>Avoiding Callback Hell</h4>
+                                        </div>
+                                        <div><strong>Flat and Manageable Structure:</strong> Promises help avoid deeply
+                                            nested callbacks, commonly known as "callback hell" or "pyramid of doom,"
+                                            which can make code hard to read and maintain.</div>
+                                        <pre><code class="language-javascript">// Callback
+doSomething((result1) => {
+    doSomethingElse(result1, (result2) => {
+        doAnotherThing(result2, (result3) => {
+            console.log(result3);
+        });
+    });
+});
+
+// Promises 
+doSomething()
+  .then(result1 => doSomethingElse(result1))
+  .then(result2 => doAnotherThing(result2))
+  .then(result3 => console.log(result3))
+  .catch(error => console.error(error));</code></pre>
+                                        <div>Promises flatten the structure, making it easier to follow the flow of
+                                            operations.</div>
+                                    </div>
+
+                                    <div class="anchor inner-int-gap" id="concurrency-management">
+                                        <div>
+                                            <h4>Concurrency Management</h4>
+                                        </div>
+                                        <div><strong>Handling Multiple Asynchronous Operations:</strong> Promises
+                                            provide methods like <span class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/all.html"
+                                                    target="_blank">'Promise.all'</a></span>, <span class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/race.html"
+                                                    target="_blank">'Promise.race'</a></span>, and <span
+                                                class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/allSettled.html"
+                                                    target="_blank">'Promise.allSettled'</a></span> to manage multiple
+                                            asynchronous operations concurrently.</div>
+                                        <pre><code class="language-javascript">// Example using Promise.all
+let promise1 = fetch('https://api.example.com/data1').then(res => res.json());
+let promise2 = fetch('https://api.example.com/data2').then(res => res.json());
+
+Promise.all([promise1, promise2])
+ .then(results => {
+   console.log('Data1:', results[0]);
+   console.log('Data2:', results[1]);
+ })
+ .catch(error => console.error('An error occurred:', error));</code></pre>
+                                        <div><span class="inject">'Promise.all'</span> waits for all promises to resolve
+                                            and then proceeds, making it useful for tasks that can run in parallel.
+                                        </div>
+                                    </div>
+
+                                    <div class="anchor inner-int-gap" id="non-blocking-operations">
+                                        <div>
+                                            <h4>Non-Blocking Operations</h4>
+                                        </div>
+                                        <div><strong>Asynchronous Execution:</strong> Promises allow asynchronous
+                                            operations to run without blocking the main thread. This is crucial for
+                                            maintaining a responsive user interface, especially in web applications.
+                                        </div>
+                                        <pre><code class="language-javascript">// Example
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Continue with other tasks
+  })
+  .catch(error => console.error('An error occurred:', error));</code></pre>
+                                        <div>While the data is being fetched, other operations can continue to execute.
+                                        </div>
+                                    </div>
+
+                                    <div class="anchor inner-int-gap" id="composability">
+                                        <div>
+                                            <h4>Composability</h4>
+                                        </div>
+                                        <div><strong>Combining Promises:</strong> Promises can be easily composed and
+                                            chained to create complex workflows. This composability makes it easier to
+                                            build sophisticated asynchronous logic.
+                                        </div>
+                                        <pre><code class="language-javascript">// Example
+function fetchDataAndProcess() {
+    return fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => processData(data));
+}
+  
+fetchDataAndProcess()
+  .then(processedData => console.log('Processed Data:', processedData))
+  .catch(error => console.error('An error occurred:', error));</code></pre>
+                                        <div>By breaking down tasks into smaller promise-returning functions, you can
+                                            compose them together for more complex operations.
+                                        </div>
+                                    </div>
+
+                                    <div class="anchor inner-int-gap" id="integration-with-modern-javascript">
+                                        <div>
+                                            <h4>Integration with Modern JavaScript</h4>
+                                        </div>
+                                        <div><strong>Compatibility with Async/Await:</strong> Promises work seamlessly
+                                            with <span class="inject"><a
+                                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/async-await.html"
+                                                    target="_blank">'async/await'</a></span>, further simplifying
+                                            asynchronous code. The combination provides the benefits of promises with
+                                            the simplicity of synchronous code.
+                                        </div>
+                                        <pre><code class="language-javascript">// Example
+async function fetchDataAndDisplay() {
+    try {
+      let response = await fetch('https://api.example.com/data');
+      let data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  }
+  
+fetchDataAndDisplay();</code></pre>
+                                        <div>Using <span class="inject">'async/await'</span> with promises enhances code
+                                            readability and maintainability.
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- Use Cases -->
+                    <div class="section-entry" id="use-cases">
+                        <div class="section-title">
+                            <h3 class="primary-color-dark">Use Cases</h3>
+                            <div class="section-card d-flex flex-column inner-int-gap">
+                                <div>Now that we have a firm understanding of what a Promise does, let's see how it can
+                                    be utilized.</div>
+
+                                <div>
+                                    <h4 class="mt-4 anchor" id="loading-game-resources">Scenario: Loading Game Resources
+                                    </h4>
+                                </div>
+
+                                <div>Let's consider a realistic scenario in video game development where promises are
+                                    used to handle asynchronous tasks. Imagine we're developing an online multiplayer
+                                    game where players can join matches, and we need to load various resources (e.g.,
+                                    player data, game settings, assets) before starting the game. Using promises can
+                                    help us manage these asynchronous operations efficiently.</div>
+                                <div>In this scenario, we'll need to do three things.
+                                    <ol>
+                                        <li>1. <strong>Fetch Player Data:</strong> Retrieve player data from a server.
+                                        </li>
+                                        <li>2. <strong>Load Game Settings:</strong> Fetch game settings from a
+                                            configuration file.</li>
+                                        <li>3. <strong>Load Game Assets:</strong> Load required assets.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    We'll use promises to handle these tasks and ensure they are completed before
+                                    starting the game. We will then break down what each function does separately.
+                                </div>
+                                <pre><code class="language-javascript">// Function to fetch player data from the server
+function fetchPlayerData(playerId) {
+  return fetch(`https://api.example.com/players/${playerId}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch player data');
+      }
+      return response.json();
+    });
+}
+
+// Function to load game settings from a configuration file
+function loadGameSettings() {
+  return fetch('https://api.example.com/game-settings')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to load game settings');
+      }
+      return response.json();
+    });
+}
+
+// Function to load a game asset (e.g., image)
+function loadAsset(assetUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(assetUrl);
+    img.onerror = () => reject(new Error('Failed to load asset: ' + assetUrl));
+    img.src = assetUrl;
+  });
+}
+
+// Function to load multiple game assets
+function loadGameAssets(assetUrls) {
+  return Promise.all(assetUrls.map(url => loadAsset(url)));
+}
+
+// Main function to start the game
+async function startGame(playerId, assetUrls) {
+  try {
+    // Fetch player data
+    const playerData = await fetchPlayerData(playerId);
+    console.log('Player Data:', playerData);
+
+    // Load game settings
+    const gameSettings = await loadGameSettings();
+    console.log('Game Settings:', gameSettings);
+
+    // Load game assets
+    const loadedAssets = await loadGameAssets(assetUrls);
+    console.log('Loaded Assets:', loadedAssets);
+
+    // Start the game with loaded resources
+    console.log('Starting game with loaded resources...');
+    // Initialize and start the game here
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Example usage
+const playerId = '12345';
+const assetUrls = [
+  'https://example.com/assets/character.png',
+  'https://example.com/assets/background.png',
+  'https://example.com/assets/soundtrack.mp3',
+];
+
+startGame(playerId, assetUrls);</code></pre>
+                                <div class="mt-4">
+                                    <h5>Fetch Player Data</h5>
+                                </div>
+                                <pre><code class="language-javascript">function fetchPlayerData(playerId) {
+  return fetch(`https://api.example.com/players/${playerId}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch player data');
+      }
+      return response.json();
+    });
+}</code></pre>
+                                <div>The <span class="inject">'fetchPlayerData'</span> function fetches player data from
+                                    the server using the Fetch API. It then returns a promise that resolves to the
+                                    player data in JSON format or rejects if the request fails.</div>
+
+                                <div class="mt-4">
+                                    <h5>Loading Game Settings</h5>
+                                </div>
+                                <pre><code class="language-javascript">function loadGameSettings() {
+  return fetch('https://api.example.com/game-settings')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to load game settings');
+      }
+      return response.json();
+    });
+}</code></pre>
+                                <div>The <span class="inject">'loadGameSettings'</span> function fetches game settings
+                                    from a remote configuration file. It then returns a promise that resolves to the
+                                    game settings in JSON format or rejects if the request fails.</div>
+
+                                <div class="mt-4">
+                                    <h5>Loading Game Assets</h5>
+                                </div>
+                                <pre><code class="language-javascript">function loadAsset(assetUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(assetUrl);
+    img.onerror = () => reject(new Error('Failed to load asset: ' + assetUrl));
+    img.src = assetUrl;
+  });
+}
+
+function loadGameAssets(assetUrls) {
+    return Promise.all(assetUrls.map(url => loadAsset(url)));
+}</code></pre>
+                                <div>The <span class="inject">'loadAsset'</span> function creates a promise that
+                                    resolves when an asset (e.g., image) is successfully loaded and rejects if it fails
+                                    to load. The <span class="inject">'loadGameAssets'</span> function uses <span
+                                        class="inject">'Promise.all'</span> to load multiple assets concurrently,
+                                    returning a promise that resolves when all assets are loaded.</div>
+
+                                <div class="mt-4">
+                                    <h5>Starting the Game</h5>
+                                </div>
+                                <pre><code class="language-javascript">async function startGame(playerId, assetUrls) {
+  try {
+    // Fetch player data
+    const playerData = await fetchPlayerData(playerId);
+    console.log('Player Data:', playerData);
+
+    // Load game settings
+    const gameSettings = await loadGameSettings();
+    console.log('Game Settings:', gameSettings);
+
+    // Load game assets
+    const loadedAssets = await loadGameAssets(assetUrls);
+    console.log('Loaded Assets:', loadedAssets);
+
+    // Start the game with loaded resources
+    console.log('Starting game with loaded resources...');
+    // Initialize and start the game here
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}</code></pre>
+                                <div>The <span class="inject">'startGame'</span> function is an <span
+                                        class="inject">'async'</span> function that uses <span
+                                        class="inject">'await'</span> to handle the asynchronous tasks in sequence. It
+                                    fetches player data, loads game settings, and loads game assets. If all tasks are
+                                    successful, the game starts with the loaded resources. If any task fails, an error
+                                    is caught and logged.</div>
+
+                                <div>
+                                    <h4 class="mt-4 anchor" id="registration-and-login">Scenario: User Registration and
+                                        Login</h4>
+                                </div>
+                                <div>Let's consider another scenario in terms of Web Development. We have created a
+                                    website and need to handle user registration and logging in.</div>
+                                <div>In this scenario, we will.
+                                    <ol>
+                                        <li>1. <strong>Fetch User Data:</strong>Validate the user's registration
+                                            details.</li>
+                                        <li>2. <strong>Save User Data:</strong> Save the user data to the database.</li>
+                                        <li>3. <strong>Provide Access:</strong> Log the user in and generate a session
+                                            token.</li>
+                                    </ol>
+                                </div>
+                                <div>
+                                    <pre><code class="language-javascript">const usersDatabase = []; // Simulating a database
+
+const validateRegistration = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (user.username && user.password) {
+        console.log(`User details validated.`);
+        resolve(user);
+      } else {
+        reject(`Validation failed: Username and password are required.`);
+      }
+    }, generateRandomDelay());
+  });
+};
+
+const saveUserToDatabase = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const userExists = usersDatabase.some(existingUser => existingUser.username === user.username);
+      if (!userExists) {
+        usersDatabase.push(user);
+        console.log(`User saved to database.`);
+        resolve(user);
+      } else {
+        reject(`User registration failed: Username already exists.`);
+      }
+    }, generateRandomDelay());
+  });
+};
+
+const loginUser = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const loggedInUser = usersDatabase.find(existingUser => 
+      existingUser.username === user.username && existingUser.password === user.password);
+
+      if (loggedInUser) {
+        const sessionToken = generateSessionToken();
+        console.log(`User logged in. Session token: ${sessionToken}`);
+        resolve(`User ${user.username} logged in successfully. Session token: ${sessionToken}`);
+      } else {
+        reject(`Login failed: Invalid username or password.`);
+      }
+    }, generateRandomDelay());
+  });
+};
+
+function generateSessionToken() {
+  return Math.floor(Math.random() * 1000000);
+}
+
+function generateRandomDelay() {
+  return Math.floor(Math.random() * 2000);
+}
+
+const user = {
+  username: 'newUser',
+  password: 'password123'
+};
+
+validateRegistration(user)
+  .then((validatedUser) => {
+    return saveUserToDatabase(validatedUser);
+  })
+  .then((savedUser) => {
+    return loginUser(savedUser);
+  })
+  .then((successMessage) => {
+    console.log(successMessage);
+  })
+  .catch((errorMessage) => {
+    console.log(errorMessage);
+  });</code></pre>
+                                    <div class="mt-4">
+                                        <h5>Validate Registration</h5>
+                                    </div>
+                                    <pre><code class="language-javascript">const validateRegistration = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (user.username && user.password) {
+        console.log(`User details validated.`);
+        resolve(user);
+      } else {
+        reject(`Validation failed: Username and password are required.`);
+      }
+    }, generateRandomDelay());
+  });
+};</code></pre>
+                                    <div>The <span class="inject">'validateRegistration'</span> function checks if the user's registration details (username and password) are provided. It returns a promise that resolves if the details are valid and rejects if they are not.</div>
+
+                                    <div class="mt-4">
+                                        <h5>Save User to Database</h5>
+                                    </div>
+                                    <pre><code class="language-javascript">const saveUserToDatabase = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const userExists = usersDatabase.some(existingUser => existingUser.username === user.username);
+      if (!userExists) {
+        usersDatabase.push(user);
+        console.log(`User saved to database.`);
+        resolve(user);
+      } else {
+        reject(`User registration failed: Username already exists.`);
+      }
+    }, generateRandomDelay());
+  });
+};</code></pre>
+                                    <div>The <span class="inject">'saveUserToDatabase'</span> function simulates saving the user to a database by pushing the user object into an array. It returns a promise that resolves if the user is saved successfully and rejects if the username already exists in the database.</div>
+
+                                    <div class="mt-4">
+                                        <h5>Login User</h5>
+                                    </div>
+                                    <pre><code class="language-javascript">const loginUser = (user) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const loggedInUser = usersDatabase.find(existingUser => 
+      existingUser.username === user.username && existingUser.password === user.password);
+
+      if (loggedInUser) {
+        const sessionToken = generateSessionToken();
+        console.log(`User logged in. Session token: ${sessionToken}`);
+        resolve(`User ${user.username} logged in successfully. Session token: ${sessionToken}`);
+      } else {
+        reject(`Login failed: Invalid username or password.`);
+      }
+    }, generateRandomDelay());
+  });
+};</code></pre>
+                                    <div>The <span class="inject">'loginUser'</span> function simulates logging the user in by checking if the username and password match an entry in the database. It returns a promise that resolves with a session token if the login is successful and rejects if the login fails.</div>
+
+                                    <div class="mt-4">
+                                        <h5>Chaining Promises</h5>
+                                    </div>
+                                    <pre><code class="language-javascript">validateRegistration(user)
+    .then((validatedUser) => {
+      return saveUserToDatabase(validatedUser);
+    })
+    .then((savedUser) => {
+      return loginUser(savedUser);
+    })
+    .then((successMessage) => {
+      console.log(successMessage);
+    })
+    .catch((errorMessage) => {
+      console.log(errorMessage);
+    });</code></pre>
+                                    <div>With this, the promises are ran in order and can be chained together. Once one promise is resolved, the next will then run with the returned resolution.</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Use Cases Entry -->
+
                 </div> <!-- END OF CONTENT-->
 
                 <!-- Internal Navigation -->
@@ -48,10 +635,24 @@
                     <div class="internal-links">
                         <ul>
                             <li><a href="#top">Overview</a></li>
+                            <li><a href="#syntax">Syntax</a></li>
+                            <li><a href="#why-use-promises">Why Use Promises?</a></li>
                             <ul class="inner-ul">
-                                <li class="inner-li"><a href="#">Inner Link</a></li>
+                                <li class="inner-li"><a href="#improved-readability">Improved Code Readability</a></li>
+                                <li class="inner-li"><a href="#better-error-handling">Better Error Handling</a></li>
+                                <li class="inner-li"><a href="#avoiding-callback">Avoiding Callback Hell</a></li>
+                                <li class="inner-li"><a href="#concurrency-management">Concurrency Management</a></li>
+                                <li class="inner-li"><a href="#non-blocking-operations">Non-Blocking Operations</a></li>
+                                <li class="inner-li"><a href="#composability">Composability</a></li>
+                                <li class="inner-li"><a href="#integration-with-modern-javascript">Integration with
+                                        Modern JavaScript</a></li>
                             </ul>
-                            <li><a href="#">Link</a></li>
+                            <li><a href="#use-cases">Use Cases</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#loading-game-resources">Loading Game Resources</a></li>
+                                <li class="inner-li"><a href="#registration-and-login">User Registration and Login</a>
+                                </li>
+                            </ul>
                         </ul>
                     </div>
                 </div>
@@ -66,14 +667,14 @@
 
     <script script type='module'>
         import { navInsert, setActive } from '/src/utilities.js';
-        const path = '/src/pages/languages/javascript/advanced-topics/asynchronous-programming/sidebar.html';
+        const path = '/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/sidebar.html';
 
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
         navInsert(path, 'sidebar');
         //Crumbs
-        navInsert('/src/pages/languages/javascript/advanced-topics/design-patterns/crumbs.html', 'crumbs');
+        navInsert('/src/pages/languages/javascript/advanced-topics/asynchronous-programming/crumbs.html', 'crumbs');
         // Set Active Link in Sidebar
         setActive(path, 'sidebar', 'promises');
     </script>

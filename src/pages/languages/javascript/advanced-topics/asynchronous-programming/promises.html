@@ -18,9 +18,14 @@
 <body>
   <div class="page-container">
     <!-- Navigation -->
-    <div id="nav-placeholder"></div>
+    <div class="nav-contained">
+	<!-- Nav Menu -->
+		<div id="nav-placeholder"></div>
+	<!-- Sub Nav Menu -->
+		<div id="subnav"></div>
+</div>
     <!-- Sub Navigation -->
-    <div id="subnav"></div>
+    
 
     <div class="content d-flex flex-row p-0">
       <!-- Side Navigation -->
@@ -857,7 +862,7 @@ validateRegistration(user)
         </div> <!-- END OF CONTENT-->
 
         <!-- Internal Navigation -->
-        <div class="internal-nav">
+        <div class="internal-nav" id="internalNav">
           <h6>Jump To Section</h6>
           <hr class="internal-hr">
           <div class="internal-links">

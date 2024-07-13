@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API | Interfaces of JavaScript | Programming Bible</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Fetch API | Interfaces | JavaScript | Programming Bible</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,55 +12,284 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="/src/pages/languages/language.css">
     <link rel="stylesheet" href="/src/css/highlightjs.css">
 </head>
 
 <body>
     <div class="page-container">
-        <!-- Nav Menu -->
-        <div id="nav-placeholder"></div>
-        <!-- Sub Nav Menu -->
-        <div id="subnav"></div>
+        <!-- Navigation -->
+        <div class="nav-contained">
+            <!-- Nav Menu -->
+            <div id="nav-placeholder"></div>
+            <!-- Sub Nav Menu -->
+            <div id="subnav"></div>
+        </div>
+        <!-- Sub Navigation -->
 
-        <!-- Content Box -->
+
         <div class="content d-flex flex-row p-0">
-            <!-- Side Nav Menu -->
+            <!-- Side Navigation -->
             <div id="sidebar"></div>
             <!-- Main Content -->
             <div class="main-content d-flex flex-column m-0">
                 <!-- Breadcrumb -->
-                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <nav class='crumb-parent m-0 d-flex' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"
+                    id="top">
                     <ol class="breadcrumb open-sans">
                         <div class="breadcrumb-item crumbs" id="crumbs"></div>
-                        <li class="breadcrumb-item active" aria-current="page">Fetch API</li>
+                        <li class="breadcrumb-item active" aria-current="page">Fetch API</a></li>
                     </ol>
                 </nav>
 
                 <!-- Content Start -->
                 <div class="entry-content">
-                    <h1 class="primary-color-dark mb-4">Fetch API</h1>
-                    <p class="mb-4"></p>
-                </div>
-            </div>
-            <!-- Internal Navigation -->
-            <div class="internal-nav">
-                <h6>Jump To Section</h6>
-                <hr class="internal-hr">
-                <div class="internal-links">
-                    <ul>
-                        <li><a href="#top">Overview</a></li>
-                        <ul class="inner-ul">
-                            <li class="inner-li"><a href="#">Inner Link</a></li>
-                        </ul>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
-            </div>
+                    <h1 class="primary-color-dark mb-4 anchor">Fetch API</h1>
+                    <div class="inner-int-gap">
+                        <div>The Fetch API is a modern, flexible, and powerful interface for making HTTP requests in
+                            web browsers. It simplifies the process of fetching resources asynchronously across the
+                            network and is built on Promises, offering a cleaner and more intuitive syntax compared
+                            to the older XMLHttpRequest. Fetch allows you to perform various types of network
+                            requests such as <span class="inject"><a
+                                    href="/src/pages/languages/javascript/interfaces/fetch-api/get.html"
+                                    target="_blank">'GET'</a></span>, <span class="inject"><a
+                                    href="/src/pages/languages/javascript/interfaces/fetch-api/post.html"
+                                    target="_blank">'POST'</a></span>, <span class="inject"><a
+                                    href="/src/pages/languages/javascript/interfaces/fetch-api/put.html"
+                                    target="_blank">'PUT'</a></span>, and <span class="inject"><a
+                                    href="/src/pages/languages/javascript/interfaces/fetch-api/delete.html"
+                                    target="_blank">'DELETE'</a></span> to interact with RESTful APIs and other web
+                            resources.</div>
 
+                        <div>With the Fetch API, you can make requests to servers to retrieve data, send data, or
+                            perform various server-side operations. This is crucial for web applications that rely
+                            on dynamic content and data interactions. Fetch is widely supported across modern
+                            browsers, making it a reliable choice for handling network requests in your web
+                            applications.</div>
+
+                        <div>
+                            One of the key benefits of using the Fetch API is its promise-based architecture, which
+                            makes it easier to handle asynchronous operations. Instead of dealing with callback
+                            hell, you can use <span class="inject"><a
+                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/then.html"
+                                    target="_blank">'.then'</a></span> and <span class="inject"><a
+                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises/catch.html"
+                                    target="_blank">'.catch'</a></span> methods to process the response and handle
+                            errors
+                            gracefully. Additionally, using <span class="inject"><a
+                                    href="/src/pages/languages/javascript/advanced-topics/asynchronous-programming/async-await.html"
+                                    target="_blank">'async/await'</a></span> syntax with Fetch can make your code
+                            look
+                            more synchronous and easier to read and maintain.
+                        </div>
+                        <div>By leveraging the Fetch API, you can build more responsive and dynamic web applications
+                            that provide a better user experience. Whether you're working with APIs to fetch data,
+                            submit forms, or manage server-side operations, Fetch provides a straightforward and
+                            efficient way to handle these tasks.</div>
+                    </div>
+
+                    <!-- Syntax -->
+                    <div class="section-entry" id="syntax">
+                        <div class="section-title">
+                            <div class="section-card d-flex flex-column">
+                                <div class="inner-int-gap">
+                                    <h3 class="primary-color-dark">Syntax</h3>
+                                    <div class="inner-int-gap">
+                                        <pre><code class="language-javascript">fetch(data)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('There has been a problem with your fetch operation:', error));</code></pre>
+                                        <div>You would be fetching data, whether a file or url, which you would then
+                                            process. The <span class="inject">'response'</span> of this request is then
+                                            checked. The <span class="inject">'response.ok'</span> function is used to
+                                            check
+                                            if the request was successful. If so, it would return true, otherwise it
+                                            would
+                                            return false. It's within this first <span class="inject">'.then'</span>
+                                            block
+                                            that you're throw an error if the request was not successful.</div>
+                                        <div>
+                                            Once the response status has completed, you can then perform whatever task
+                                            you
+                                            intend on the data received. Finally, you'd use a <span
+                                                class="inject">'.catch'</span> block at the end to handle any errors.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Syntax -->
+
+                    <!-- ENTRY -->
+                    <div class="section-title" id="fetch-requests">
+                        <div class="section-card d-flex flex-column">
+                            <div class="marg-entry">
+                                <div class="inner-int-gap">
+                                    <h3 class="primary-color-dark">Fetch Requests</h3>
+                                    <div>There are 4 main types of requests in the Fetch API as outline prior. These
+                                        are <span class="inject">'GET'</span>, <span class="inject">'POST'</span>,
+                                        <span class="inject">'PUT'</span> and <span class="inject">'DELETE'</span>.
+                                        Let's take a look at each one briefly to get
+                                        an idea of how they work.
+                                    </div>
+                                </div>
+
+                                <div class="mt-4" id="get-req">
+                                    <h4 class="mt-4">GET</h4>
+                                    <div class="my-3">
+                                        A <strong>GET</strong> request is used to retrieve data from a specified
+                                        resource. It's the most common type of HTTP request.
+                                    </div>
+                                    <pre><code class="language-javascript">fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));</code></pre>
+                                    <h6 class="my-3">Explanation</h6>
+                                    <div class="linked">
+                                        <span class="inject">'fetch('https://api.example.com/data')'</span>:
+                                        initiates a GET request to the specified
+                                        URL. <br>
+                                        <span class="inject">'.then(response =>
+                                            response.json())'</span>: processes the response to JSON.
+                                        <br>
+                                        <span class="inject">'.then(data => console.log(data))'</span>:
+                                        logs the retrieved data. <br>
+                                        <span class="inject">'.catch(error => console.error('Error:',
+                                            error))'</span>: catches and logs any errors. <br> <br>
+                                        For more in-depth details, refer to the <a
+                                            href="/src/pages/languages/javascript/interfaces/fetch-api/get.html"
+                                            target="_blank">GET Requests</a> page.
+                                    </div>
+                                </div>
+
+                                <div class="mt-4" id="post-req">
+                                    <h4 class="mt-4">POST</h4>
+                                    <div class="my-3">
+                                        A <strong>POST</strong> request is used to send data to a server to
+                                        create or update a resource.
+                                    </div>
+                                    <pre><code class="language-javascript">fetch('https://api.example.com/data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ key: 'value' })
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));</code></pre>
+                                    <h6 class="my-3">Explanation</h6>
+                                    <div class="linked">
+                                        <span class="inject">'method: POST'</span>: specifies the HTTP
+                                        method. <br>
+                                        <span class="inject">'headers: { 'Content-Type': 'application/json'
+                                            }'</span>: sets the request headers. <br>
+                                        <span class="inject">'body: JSON.stringify({ key: 'value'
+                                            })'</span>: converts the data to a JSON string for the request
+                                        body. <br> <br>
+                                        For more in-depth details, refer to the <a
+                                            href="/src/pages/languages/javascript/interfaces/fetch-api/post.html"
+                                            target="_blank">POST Requests</a> page.
+                                    </div>
+                                </div>
+
+                                <div class="mt-4" id="put-req">
+                                    <h4 class="mt-4">PUT</h4>
+                                    <div class="my-3">
+                                        A <strong>PUT</strong> request is used to update an existing resource on the
+                                        server.
+                                    </div>
+                                    <pre><code class="language-javascript">fetch('https://api.example.com/data/1', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ key: 'updatedValue' })
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));</code></pre>
+                                    <div class="linked">
+                                        For more in-depth details, refer to the <a
+                                            href="/src/pages/languages/javascript/interfaces/fetch-api/put.html"
+                                            target="_blank">PUT Requests</a> page.
+                                    </div>
+                                </div>
+
+                                <div class="mt-4" id="delete-req">
+                                    <h4 class="mt-4">DELETE</h4>
+                                    <div class="my-3">
+                                        A <strong>DELETE</strong> request is used to delete a resource on the
+                                        server.
+                                    </div>
+                                    <pre><code class="language-javascript">fetch('https://api.example.com/data/1', {
+    method: 'DELETE'
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));</code></pre>
+                                    <div class="linked">
+                                        For more in-depth details, refer to the <a
+                                            href="/src/pages/languages/javascript/interfaces/fetch-api/delete.html"
+                                            target="_blank">DELETE Requests</a> page.
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                    <!-- ENTRY -->
+                    <div class="section-entry">
+                        <div class="section-title" id="handling-responses">
+                            <div class="section-card d-flex flex-column">
+                                <div class="inner-int-gap">
+                                    <h3 class="primary-color-dark">Handling Responses</h3>
+                                    <div class="inner-int-gap">
+                                        <div>Handling responses in fetch involves checking the response status, converting the response to a usable format like JSON, and managing any errors. This ensures that you correctly process the data received from the server and handle any issues that may arise during the request.</div>
+                                        <pre><code class="language-javascript">CODE</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Entry -->
+
+                </div> <!-- END OF CONTENT-->
+
+                <!-- Internal Navigation -->
+                <div class="internal-nav" id="internalNav">
+                    <h6>Jump To Section</h6>
+                    <hr class="internal-hr">
+                    <div class="internal-links">
+                        <ul>
+                            <li><a href="#top">Overview</a></li>
+                            <li><a href="#syntax">Syntax</a></li>
+                            <li><a href="#fetch-requests">Fetch Requests</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#get-req">GET</a></li>
+                                <li class="inner-li"><a href="#post-req">POST</a></li>
+                                <li class="inner-li"><a href="#put-req">PUT</a></li>
+                                <li class="inner-li"><a href="#delete-req">DELETE</a></li>
+                            </ul>
+                            <li><a href="#handling-responses">Handling Responses</a></li>
+                            <li><a href="#common-mistakes">Common Mistakes</a></li>
+                            <li><a href="#use-cases">Use Cases</a></li>
+                            <ul class="inner-ul">
+                                <li class="inner-li"><a href="#loading-game-resources">Loading Game Resources</a></li>
+                                <li class="inner-li"><a href="#registration-and-login">User Registration and Login</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
@@ -71,17 +298,17 @@
 
     <script script type='module'>
         import { navInsert, setActive } from '/src/utilities.js';
-        const path = '/src/pages/languages/javascript/interfaces/sidebar.html';
+        const path = '/src/pages/languages/javascript/interfaces/fetch-api/sidebar.html';
 
         // Sub Nav
         navInsert('/src/pages/languages/js-subnav.html', 'subnav');
         // Sidebar
         navInsert(path, 'sidebar');
         //Crumbs
-        navInsert('/src/pages/languages/javascript/interfaces/crumbs.html', 'crumbs');
+        navInsert('/src/pages/languages/javascript/advanced-topics/asynchronous-programming/crumbs.html', 'crumbs');
+        // Set Active Link in Sidebar
         setActive(path, 'sidebar', 'fetch-api');
     </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </body>

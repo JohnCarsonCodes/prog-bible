@@ -1,4 +1,5 @@
 const recentDocuments = [
+  { title: 'Fetch API', updatedDate: '07-13-2024', url: '/src/pages/languages/javascript/interfaces/fetch-api.html' },
   { title: 'Promises', updatedDate: '07-09-2024', url: '/src/pages/languages/javascript/advanced-topics/asynchronous-programming/promises.html' },
   { title: 'Running Tests', updatedDate: '06-22-2024', url: '/src/pages/languages/javascript/advanced-topics/testing/running-test.html' },
   { title: 'Methodologies', updatedDate: '06-21-2024', url: '/src/pages/languages/javascript/advanced-topics/testing/methodologies.html' },

@@ -245,14 +245,26 @@
                     </div> <!-- End of Entry -->
 
                     <!-- ENTRY -->
-                    <div class="section-entry">
-                        <div class="section-title" id="handling-responses">
+                    <div class="section-entry" id="handle-response">
+                        <div class="section-title">
                             <div class="section-card d-flex flex-column">
                                 <div class="inner-int-gap">
                                     <h3 class="primary-color-dark">Handling Responses</h3>
                                     <div class="inner-int-gap">
-                                        <div>Handling responses in fetch involves checking the response status, converting the response to a usable format like JSON, and managing any errors. This ensures that you correctly process the data received from the server and handle any issues that may arise during the request.</div>
-                                        <pre><code class="language-javascript">CODE</code></pre>
+                                        <div>Handling responses in fetch involves checking the response status,
+                                            converting the response to a usable format like JSON, and managing any
+                                            errors. This ensures that you correctly process the data received from the
+                                            server and handle any issues that may arise during the request.</div>
+                                        <pre><code class="language-javascript">fetch('https://api.example.com/data')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('There has been a problem with your fetch operation:', error));</code></pre>
+                                        <div>The response is handled by the <span class="inject">'response.ok'</span> function to ensure that the request was successful to proceed with your code. If an error is found, it would be appropriately handled by throwing an error within the <span class="inject">'block'</span>.</div>
                                     </div>
                                 </div>
                             </div>
@@ -276,14 +288,7 @@
                                 <li class="inner-li"><a href="#put-req">PUT</a></li>
                                 <li class="inner-li"><a href="#delete-req">DELETE</a></li>
                             </ul>
-                            <li><a href="#handling-responses">Handling Responses</a></li>
-                            <li><a href="#common-mistakes">Common Mistakes</a></li>
-                            <li><a href="#use-cases">Use Cases</a></li>
-                            <ul class="inner-ul">
-                                <li class="inner-li"><a href="#loading-game-resources">Loading Game Resources</a></li>
-                                <li class="inner-li"><a href="#registration-and-login">User Registration and Login</a>
-                                </li>
-                            </ul>
+                            <li><a href="#handle-response">Handling Responses</a></li>
                         </ul>
                     </div>
                 </div>

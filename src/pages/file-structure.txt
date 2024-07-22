@@ -1,0 +1,451 @@
+pages
+├── adding-sub-category.txt
+├── frameworks
+│   ├── angular.html
+│   ├── bootstrap.html
+│   ├── django.html
+│   ├── nodejs.html
+│   ├── reactjs.html
+│   └── vuejs.html
+├── ides
+│   ├── android-studio.html
+│   ├── eclipse.html
+│   ├── intellij-idea.html
+│   ├── visual-studio-code.html
+│   ├── visual-studio.html
+│   └── xcode.html
+├── languages
+│   ├── c.html
+│   ├── cpp.html
+│   ├── csharp.html
+│   ├── java.html
+│   ├── javascript
+│   │   ├── advanced-topics
+│   │   │   ├── asynchronous-programming
+│   │   │   │   ├── async-await.html
+│   │   │   │   ├── async-iteration.html
+│   │   │   │   ├── callback-functions.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── error-handling.html
+│   │   │   │   ├── microtasks-macrotasks.html
+│   │   │   │   ├── parrallel-vs-sequential.html
+│   │   │   │   ├── promises
+│   │   │   │   │   ├── all.html
+│   │   │   │   │   ├── allSettled.html
+│   │   │   │   │   ├── any.html
+│   │   │   │   │   ├── catch.html
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   ├── finally.html
+│   │   │   │   │   ├── promise-flowchart.png
+│   │   │   │   │   ├── race.html
+│   │   │   │   │   ├── reject.html
+│   │   │   │   │   ├── resolve.html
+│   │   │   │   │   ├── sidebar.html
+│   │   │   │   │   ├── then.html
+│   │   │   │   │   └── withResolvers.html
+│   │   │   │   ├── promises.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   └── the-event-loop.html
+│   │   │   ├── asynchronous-programming.html
+│   │   │   ├── closures.html
+│   │   │   ├── context.html
+│   │   │   ├── crumbs.html
+│   │   │   ├── design-patterns
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── factory.html
+│   │   │   │   ├── module.html
+│   │   │   │   ├── observer.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   └── singleton.html
+│   │   │   ├── design-patterns.html
+│   │   │   ├── modules
+│   │   │   │   ├── commonjs.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── es6.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── modules.html
+│   │   │   ├── prototype-inheritence
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── prototype-inheritence.html
+│   │   │   ├── sidebar.html
+│   │   │   ├── testing
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── frameworks.html
+│   │   │   │   ├── methodologies.html
+│   │   │   │   ├── running-test.html
+│   │   │   │   └── sidebar.html
+│   │   │   └── testing.html
+│   │   ├── advanced-topics.html
+│   │   ├── built-in-objects
+│   │   │   ├── abstraction-control
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── abstraction-control.html
+│   │   │   ├── arrays
+│   │   │   │   ├── constructor.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── instance-method.html
+│   │   │   │   ├── instance-methods
+│   │   │   │   │   ├── at.html
+│   │   │   │   │   ├── concat.html
+│   │   │   │   │   ├── copyWithin.html
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   ├── entries.html
+│   │   │   │   │   ├── every.html
+│   │   │   │   │   ├── fill.html
+│   │   │   │   │   ├── filter.html
+│   │   │   │   │   ├── find.html
+│   │   │   │   │   ├── findIndex.html
+│   │   │   │   │   ├── findLast.html
+│   │   │   │   │   ├── findLastIndex.html
+│   │   │   │   │   ├── flat.html
+│   │   │   │   │   ├── flatMap.html
+│   │   │   │   │   ├── forEach.html
+│   │   │   │   │   ├── includes.html
+│   │   │   │   │   ├── indexOf.html
+│   │   │   │   │   ├── join.html
+│   │   │   │   │   ├── keys.html
+│   │   │   │   │   ├── lastIndexOf.html
+│   │   │   │   │   ├── map.html
+│   │   │   │   │   ├── pop.html
+│   │   │   │   │   ├── push.html
+│   │   │   │   │   ├── reduce.html
+│   │   │   │   │   ├── reduceRight.html
+│   │   │   │   │   ├── reverse.html
+│   │   │   │   │   ├── shift.html
+│   │   │   │   │   ├── slice.html
+│   │   │   │   │   ├── some.html
+│   │   │   │   │   ├── sort.html
+│   │   │   │   │   ├── splice.html
+│   │   │   │   │   ├── toLocaleString.html
+│   │   │   │   │   ├── toReversed.html
+│   │   │   │   │   ├── toSorted.html
+│   │   │   │   │   ├── toSpliced.html
+│   │   │   │   │   ├── toString.html
+│   │   │   │   │   ├── unshift.html
+│   │   │   │   │   ├── values.html
+│   │   │   │   │   └── with.html
+│   │   │   │   ├── instance-properties
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   └── length.html
+│   │   │   │   ├── instance-property.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   ├── static-method.html
+│   │   │   │   ├── static-methods
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   ├── from.html
+│   │   │   │   │   ├── fromAsync.html
+│   │   │   │   │   ├── isArray.html
+│   │   │   │   │   └── of.html
+│   │   │   │   ├── static-properties
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   └── properties.html
+│   │   │   │   └── static-property.html
+│   │   │   ├── arrays.html
+│   │   │   ├── crumbs.html
+│   │   │   ├── error-objects
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── error-objects.html
+│   │   │   ├── fundamental-objects
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── fundamental-objects.html
+│   │   │   ├── global-objects
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── function-properties
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   └── sidebar.html
+│   │   │   │   ├── function-properties.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   ├── value-properties
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   └── sidebar.html
+│   │   │   │   └── value-properties.html
+│   │   │   ├── global-objects.html
+│   │   │   ├── internationalization
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── internationalization.html
+│   │   │   ├── keyed-collections
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── keyed-collections.html
+│   │   │   ├── memory-management
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── memory-management.html
+│   │   │   ├── numbers-dates
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── numbers-dates.html
+│   │   │   ├── sidebar.html
+│   │   │   ├── structured-data
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── structured-data.html
+│   │   │   ├── text-processing
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   └── text-processing.html
+│   │   ├── built-in-objects.html
+│   │   ├── crumbs.html
+│   │   ├── fundamentals
+│   │   │   ├── control-structures
+│   │   │   │   ├── conditionals.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── loops.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── control-structures.html
+│   │   │   ├── crumbs.html
+│   │   │   ├── data-types
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── primitive-data-types.html
+│   │   │   │   ├── reference-data-types.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── data-types.html
+│   │   │   ├── functions
+│   │   │   │   ├── arrow-functions.html
+│   │   │   │   ├── callbacks.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── declaration-and-expression.html
+│   │   │   │   ├── higher-order-functions.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── functions.html
+│   │   │   ├── introduction.html
+│   │   │   ├── object-oriented-programming
+│   │   │   │   ├── classes.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── encapsulation.html
+│   │   │   │   ├── inheritence.html
+│   │   │   │   ├── polymorphism.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── object-oriented-programming.html
+│   │   │   ├── operators
+│   │   │   │   ├── arithmetic-operators.html
+│   │   │   │   ├── assignment-operators.html
+│   │   │   │   ├── comparison-operators.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── logical-operators.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   └── ternary-operators.html
+│   │   │   ├── operators.html
+│   │   │   ├── sidebar.html
+│   │   │   ├── variables
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── declaration-and-initialization.html
+│   │   │   │   ├── scope.html
+│   │   │   │   └── sidebar.html
+│   │   │   └── variables.html
+│   │   ├── fundamentals.html
+│   │   ├── interfaces
+│   │   │   ├── bom
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── history.html
+│   │   │   │   ├── location.html
+│   │   │   │   ├── navigator.html
+│   │   │   │   ├── screen.html
+│   │   │   │   ├── sidebar.html
+│   │   │   │   └── window.html
+│   │   │   ├── browser-object-model.html
+│   │   │   ├── crumbs.html
+│   │   │   ├── document-object-model.html
+│   │   │   ├── dom
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── document
+│   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   ├── events
+│   │   │   │   │   │   └── events.html
+│   │   │   │   │   ├── events.html
+│   │   │   │   │   ├── instance-methods
+│   │   │   │   │   │   ├── createElement.html
+│   │   │   │   │   │   ├── crumbs.html
+│   │   │   │   │   │   ├── getElementById.html
+│   │   │   │   │   │   ├── getElementsByClassName.html
+│   │   │   │   │   │   ├── querySelector.html
+│   │   │   │   │   │   ├── querySelectorAll.html
+│   │   │   │   │   │   └── sidebar.html
+│   │   │   │   │   ├── instance-methods.html
+│   │   │   │   │   ├── instance-properties
+│   │   │   │   │   ├── instance-properties.html
+│   │   │   │   │   └── sidebar.html
+│   │   │   │   ├── document.html
+│   │   │   │   ├── element.html
+│   │   │   │   ├── events
+│   │   │   │   │   ├── animation
+│   │   │   │   │   ├── clipboard
+│   │   │   │   │   ├── composition
+│   │   │   │   │   ├── css-transition
+│   │   │   │   │   ├── database
+│   │   │   │   │   ├── dom-mutation
+│   │   │   │   │   ├── drag-drop
+│   │   │   │   │   ├── focus
+│   │   │   │   │   ├── form
+│   │   │   │   │   ├── fullscreen
+│   │   │   │   │   ├── gamepad
+│   │   │   │   │   ├── gestures
+│   │   │   │   │   ├── history
+│   │   │   │   │   ├── html-element
+│   │   │   │   │   ├── input
+│   │   │   │   │   ├── keyboard
+│   │   │   │   │   ├── load-unload
+│   │   │   │   │   ├── manifest
+│   │   │   │   │   ├── media
+│   │   │   │   │   ├── messaging
+│   │   │   │   │   ├── mouse
+│   │   │   │   │   ├── network
+│   │   │   │   │   ├── payments
+│   │   │   │   │   ├── performance
+│   │   │   │   │   ├── pointer
+│   │   │   │   │   ├── print
+│   │   │   │   │   ├── promise-rejection
+│   │   │   │   │   ├── rtc
+│   │   │   │   │   ├── server-sent-events
+│   │   │   │   │   ├── sockets
+│   │   │   │   │   ├── speech
+│   │   │   │   │   ├── svg
+│   │   │   │   │   ├── text-selection
+│   │   │   │   │   ├── touch
+│   │   │   │   │   ├── wheel
+│   │   │   │   │   └── workers
+│   │   │   │   ├── node
+│   │   │   │   │   ├── events
+│   │   │   │   │   ├── instance-methods
+│   │   │   │   │   │   ├── appendChild.html
+│   │   │   │   │   │   └── insertBefore.html
+│   │   │   │   │   └── instance-properties
+│   │   │   │   └── sidebar.html
+│   │   │   ├── events
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── custom-events.html
+│   │   │   │   ├── event-handling.html
+│   │   │   │   ├── event-listeners.html
+│   │   │   │   ├── event-propagation.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── events.html
+│   │   │   ├── fetch-api
+│   │   │   │   ├── async-await-with-fetch.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── delete.html
+│   │   │   │   ├── error-handling.html
+│   │   │   │   ├── get.html
+│   │   │   │   ├── handling-responses.html
+│   │   │   │   ├── post.html
+│   │   │   │   ├── put.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── fetch-api.html
+│   │   │   ├── sidebar.html
+│   │   │   ├── web-storage-api
+│   │   │   │   ├── crumbs.html
+│   │   │   │   ├── local-storage.html
+│   │   │   │   ├── session-storage.html
+│   │   │   │   └── sidebar.html
+│   │   │   ├── web-storage-api.html
+│   │   │   ├── web-workers
+│   │   │   │   ├── communication.html
+│   │   │   │   ├── creating-web-workers.html
+│   │   │   │   ├── crumbs.html
+│   │   │   │   └── sidebar.html
+│   │   │   └── web-workers.html
+│   │   ├── interfaces.html
+│   │   ├── resources
+│   │   │   ├── community-and-forums.html
+│   │   │   ├── libraries-and-frameworks
+│   │   │   │   ├── angular.html
+│   │   │   │   ├── jquery.html
+│   │   │   │   ├── react.html
+│   │   │   │   └── vue.html
+│   │   │   ├── libraries-and-frameworks.html
+│   │   │   ├── official-documentation.html
+│   │   │   ├── tools-and-editors.html
+│   │   │   └── tutorials-and-guides.html
+│   │   └── resources.html
+│   ├── javascript.html
+│   ├── js-subnav.html
+│   ├── language.css
+│   └── python.html
+├── libraries
+│   ├── jquery.html
+│   ├── numpy.html
+│   ├── pandas.html
+│   ├── react
+│   │   └── libraries.txt
+│   ├── react.html
+│   ├── requests.html
+│   └── tensorflow.html
+├── markup-languages
+│   ├── html.html
+│   ├── json.html
+│   ├── latex.html
+│   ├── markdown.html
+│   ├── xml.html
+│   └── yaml.html
+├── onpage-content-template.html
+├── stylesheet-languages
+│   ├── css.html
+│   ├── less.html
+│   ├── postcss.html
+│   ├── sass.html
+│   ├── stylus.html
+│   └── tailwind.html
+├── systems
+│   ├── crumbs.html
+│   ├── git
+│   │   ├── commands
+│   │   │   ├── aaaaaa-category-template.txt
+│   │   │   ├── advanced.html
+│   │   │   ├── branching-merging.html
+│   │   │   ├── changes.html
+│   │   │   ├── crumbs-advanced.html
+│   │   │   ├── crumbs-branch-merge.html
+│   │   │   ├── crumbs-changes.html
+│   │   │   ├── crumbs-commands.html
+│   │   │   ├── crumbs-inspect-compare.html
+│   │   │   ├── crumbs-remote-repo.html
+│   │   │   ├── crumbs-repo.html
+│   │   │   ├── crumbs-setup.html
+│   │   │   ├── crumbs-snap.html
+│   │   │   ├── crumbs-stashing.html
+│   │   │   ├── crumbs-tagging.html
+│   │   │   ├── git-add.html
+│   │   │   ├── git-bisect.html
+│   │   │   ├── git-blame.html
+│   │   │   ├── git-branch.html
+│   │   │   ├── git-checkout.html
+│   │   │   ├── git-cherry-pick.html
+│   │   │   ├── git-clone.html
+│   │   │   ├── git-commit.html
+│   │   │   ├── git-config.html
+│   │   │   ├── git-diff.html
+│   │   │   ├── git-fetch.html
+│   │   │   ├── git-init.html
+│   │   │   ├── git-log.html
+│   │   │   ├── git-merge.html
+│   │   │   ├── git-pull.html
+│   │   │   ├── git-push-remote.html
+│   │   │   ├── git-push-tag.html
+│   │   │   ├── git-rebase.html
+│   │   │   ├── git-remote-add.html
+│   │   │   ├── git-remote.html
+│   │   │   ├── git-reset.html
+│   │   │   ├── git-revert.html
+│   │   │   ├── git-show.html
+│   │   │   ├── git-stash.html
+│   │   │   ├── git-status.html
+│   │   │   ├── git-tag.html
+│   │   │   ├── inspect-compare.html
+│   │   │   ├── remote-repo.html
+│   │   │   ├── repo-initialization.html
+│   │   │   ├── setup.html
+│   │   │   ├── snapshotthing.html
+│   │   │   ├── stashing.html
+│   │   │   └── tagging.html
+│   │   ├── commands.html
+│   │   ├── crumbs.html
+│   │   └── sidebar.html
+│   ├── git-subnav.html
+│   ├── git.html
+│   ├── systems.css
+│   └── systems.html
+└── ZZ TEMPLATE page-content.html
